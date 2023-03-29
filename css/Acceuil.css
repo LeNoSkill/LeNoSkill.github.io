@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
   }
+  
+  a{
+    color : blue
+  }
 
   .header.finisher-header {
     position: fixed;
