@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="../css/Acceuil.css">
     <script src="../js/finisher-header.es5.min.js" type="text/javascript"></script>
     <script src="../js/backgroundanimation.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/jquery-3.6.3.js"></script>
+    <script src="../js/connexion.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
     .error {color: #ff0000; }
@@ -16,8 +19,7 @@
 
 <body>
     <div class="header finisher-header"></div>
-    <div class="container">
-        <?php include('Traitement_Donne.php'); ?>   
+    <div class="container"> 
         <form id="connexion-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <label for="theme" class="theme">
                 <span class="theme__toggle-wrap">
@@ -41,19 +43,18 @@
             <p><span class="error">* champ obligatoire</span></p><br><br>
 
             <label for="email">Adresse email :</label>
-            <span class="error">* <?php echo $emailErr; ?></span><br>
-            <input type="email" id="email" name="email" placeholder="exemple@gmail.com" pattern="[A-Za-z0-9._%+-]{0,50}@[A-Za-z0-9.-]{0,20}\.[A-Za-z]{0,10}" 
+            <input type="email" id="email_c" name="email" placeholder="exemple@gmail.com" pattern="[A-Za-z0-9._%+-]{0,50}@[A-Za-z0-9.-]{0,20}\.[A-Za-z]{0,10}" 
             title="Le mail doit contenir @ et le . à la fin de celui ci comme dans l'exemple exemple@gmail.com" required>
             
             <label for="password">Mot de passe :</label>
-            <span class="error">* <?php echo $passwordErr; ?></span><br>
             <input type="password" id="password" name="password" pattern=".{8,}" title="Le mot de passe doit contenir au minimum 8 caractères" required>
             
             <button type="submit">Se connecter</button>
             <p id="inscription-link">Vous n'avez pas de compte ? <a onclick="openInscriptionForm()"><u>S'inscrire</u></a></p>
         </form>
-
+        
         <div class="inscription-form" id="inscription-form" style="display:none;">
+        <?php include('Traitement_Donne.php')?>
             <h1>Inscription</h1>
             <p><span class="error">* champ obligatoire</span></p><br><br>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">

@@ -88,13 +88,6 @@ label[for="password"] i.fa {
   transform: translateY(-50%);
 }
 
-input[type="password"] {
-  padding-right: 25px; /* ajustez la valeur en fonction de la taille de votre image */
-  background-image: url("chemin/vers/votre/image/icone-verrouillage.png"); /* ajustez le chemin de votre image */
-  background-repeat: no-repeat;
-  background-position: center right; /* positionnez l'image à droite de l'input */
-  background-size: 16px 16px; /* ajustez la taille de votre image */
-}
 
 input[type="date"] {
   width: 95%;
