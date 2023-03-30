@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $newpasswordErr = "Le mot de passe est requis";
     } else {
         $newpassword = test_input($_POST["newpassword"]);
-        if (strlen($password) < 8) {
+        if (strlen($newpassword) < 8) {
             $newpasswordErr = "Le mot de passe doit avoir au moins 8 caractères";
         } else if (preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,}$/', $newpassword)) {
             $newpasswordErr = "Le mot de passe est trop faible. Veuillez choisir un mot de passe plus fort";
@@ -101,7 +101,6 @@ echo "Poids: " . $weight . "<br>";
 echo "Taille: " . $height . "<br>";
 echo "Genre: " . $gender . "<br>";
 */
-
-// pour connecté a la bdd include('EntreeDonneBDD.php'); 
+include('EntreeDonneBDD.php'); 
 
 ?>

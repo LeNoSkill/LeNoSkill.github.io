@@ -88,8 +88,8 @@
                 <input type="number" id="height" name="height" step="0.1" pattern="\d+(\.\d{1,2})?" required>
                 
                 <span class="error">* <?php echo $genderErr; ?></span><br>
-                <input type="radio" name="gender" value="homme" title="Vous devez spécifier votre genre." required>Homme
-                <input type="radio" name="gender" value="femme" title="Vous devez spécifier votre genre." required>Femme
+                <input type="radio" name="gender" value="H" title="Vous devez spécifier votre genre." required>Homme
+                <input type="radio" name="gender" value="F" title="Vous devez spécifier votre genre." required>Femme
                 
                 <button type="submit">S'inscrire</button>
             </form>

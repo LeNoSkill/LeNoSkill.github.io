@@ -3,15 +3,19 @@ create database if not exists smarteats character set ='utf8';
 use smarteats;
 
 -- Table des utilisateurs 
-CREATE TABLE  if not exists utilisateurs (
-  ID INT NOT NULL AUTO_INCREMENT,
-  nom_utilisateur VARCHAR(255) NOT NULL,
-  mot_de_passe VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  type_utilisateur ENUM('client', 'client vip', 'admin') NOT NULL,
-  PRIMARY KEY (ID),
-  UNIQUE (nom_utilisateur)
-)engine=innodb;
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `TYPE` int NOT NULL,
+  `MAIL` varchar(100) NOT NULL,
+  `PASSWORD` varchar(50) NOT NULL,
+  `NOM` varchar(50) NOT NULL,
+  `PRENOM` varchar(50) NOT NULL,
+  `DATENAISSANCE` date NOT NULL,
+  `POIDS` decimal(4,1) NOT NULL,
+  `TAILLE_CM` decimal(4,1) NOT NULL,
+  `SEXE` char(1) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB;
 
 -- Table des informations nutritionnelles
 CREATE TABLE  if not exists info_nutri (
