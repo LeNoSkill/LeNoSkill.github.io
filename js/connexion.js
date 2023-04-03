@@ -25,9 +25,9 @@ $(document).ready(function () {
           data: { email: email, password: password },
           success: function (response) {
             if (response == "ok") {
-              window.location.href = "./php/test.php"; // rediriger vers la page de destination si les informations sont correctes
+              window.location.href = "../php/test.php"; // rediriger vers la page de destination si les informations sont correctes
             } else {
-              alert("Adresse email ou mot de passe incorrectttt");
+              alert("Adresse email ou mot de passe incorrect");
             }
           },
           error: function (xhr, status, error) {

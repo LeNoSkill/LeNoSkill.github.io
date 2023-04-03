@@ -5,6 +5,9 @@ $conn=connectDB("localhost","SmartEats", "root", ""); //adresse du serveur BD , 
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+echo "Email: " . $email . "<br>";
+echo "Password: " . $password . "<br>";
+
 try {
   $query = "SELECT * FROM utilisateurs WHERE MAIL = ?";
   $statement = $conn->prepare($query);
@@ -13,11 +16,11 @@ try {
   $user = $statement->fetch(PDO::FETCH_ASSOC);
 
   if ($user && password_verify($password, $user['PASSWORD'])) {
-    session_start();
+    /*session_start();
     $_SESSION['user_id'] = $user['ID'];
     $_SESSION['user_email'] = $user['MAIL'];
     $_SESSION['user_name'] = $user['NOM'];
-    $_SESSION['user_firstname'] = $user['PRENOM'];
+    $_SESSION['user_firstname'] = $user['PRENOM'];*/
     echo "ok";
   } else {
     echo "Adresse email ou mot de passe incorrect";
@@ -26,9 +29,5 @@ try {
   echo "Error: " . $e->getMessage();
 }
 
-// Send JavaScript code to display alerts
-echo "<script>";
-echo "alert('Email: " . addslashes($email) . "');";
-echo "alert('Password: " . addslashes($password)."');";
-echo "</script>";
+
 ?>
