@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Salut</h1>
-    
+    <?php include("acceuil.php"); ?>
 </body>
 </html>
