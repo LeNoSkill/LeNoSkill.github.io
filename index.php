@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartEats</title>
-    <link rel="stylesheet" href="/css/Acceuil.css">
-    <script src="/js/finisher-header.es5.min.js" type="text/javascript"></script>
-    <script src="/js/backgroundanimation.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/Acceuil.css">
+    <script src="js/finisher-header.es5.min.js" type="text/javascript"></script>
+    <script src="js/backgroundanimation.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/jquery-3.6.3.js"></script>
-    <script src="/js/connexion.js"></script>
+    <script src="js/jquery-3.6.3.js"></script>
+    <script src="js/connexion.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
     .error {color: #ff0000; }
@@ -38,7 +38,7 @@
                     </span>
                 </span>
             </label>
-            <img src="../img/logo.png" alt="Logo SmartEats" class="logo">
+            <img src="img/logo.png" alt="Logo SmartEats" class="logo">
             <h1 id="connexion-title">Connexion</h1>
             <p><span class="error">* champ obligatoire</span></p><br><br>
 
