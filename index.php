@@ -8,18 +8,39 @@
     <link rel="stylesheet" href="css/Acceuil.css">
     <script src="js/finisher-header.es5.min.js" type="text/javascript"></script>
     <script src="js/backgroundanimation.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-3.6.3.js"></script>
     <script src="js/connexion.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+        /*APPARITION ET D4ISPARITION FORMULAIRE DE CONNEXION*/
+        function openInscriptionForm() {
+            document.getElementById("connexion-title").style.display = "none";
+            document.getElementById("connexion-form").style.display = "none";
+            document.getElementById("inscription-form").style.display = "block";
+            document.getElementById("inscription-link").style.display = "none";
+        }
+    </script>
     <style>
     .error {color: #ff0000; }
     </style>
+    <style>
+    /* Mode clair */
+    .light-mode {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    /* Mode sombre */
+    .dark-mode {
+        background-color: #333333;
+        color: #ffffff;
+    }
+</style>
 </head>
 
 <body>
     <div class="header finisher-header"></div>
-    <div class="container"> 
+    <div class="container" id="body"> 
         <form id="connexion-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <label for="theme" class="theme">
                 <span class="theme__toggle-wrap">
@@ -96,16 +117,21 @@
             </form>
         </div>
     </div>
-
     <script>
-        /*APPARITION ET D4ISPARITION FORMULAIRE DE CONNEXION*/
-        function openInscriptionForm() {
-            document.getElementById("connexion-title").style.display = "none";
-            document.getElementById("connexion-form").style.display = "none";
-            document.getElementById("inscription-form").style.display = "block";
-            document.getElementById("inscription-link").style.display = "none";
+    const toggleTheme = document.getElementById('theme');
+    const body = document.getElementById('body');
+
+    toggleTheme.addEventListener('change', function () {
+        if (this.checked) {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
         }
-    </script>
+    });
+</script>
+
 </body>
 
 </html>

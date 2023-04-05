@@ -88,6 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $genderErr = "Le genre doit être soit 'homme' soit 'femme'";
         }
     }
+    
+    include('php/EntreeDonneBDD.php'); 
 
 }
 
@@ -101,6 +103,6 @@ echo "Poids: " . $weight . "<br>";
 echo "Taille: " . $height . "<br>";
 echo "Genre: " . $gender . "<br>";
 */
-include('EntreeDonneBDD.php'); 
+
 
 ?>
