@@ -59,6 +59,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $birthdate = test_input($_POST["birthdate"]);
         if (strtotime($birthdate) > time()) {
             $birthdateErr = "La date de naissance ne peut pas être dans le futur";
+        } else {
+            $today = new DateTime();
+            $birthdateObj = new DateTime($birthdate);
+            $age = $birthdateObj->diff($today)->y;
+    
+            if ($age < 12) {
+                $birthdateErr = "Vous devez avoir au moins 12 ans.";
+            }
         }
     }
 
@@ -82,27 +90,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($_POST["gender"])) {
         $genderErr = "Le genre est requis";
-    } else {
-        $gender = test_input($_POST["gender"]);
-        if ($gender !== "homme" && $gender !== "femme") {
-            $genderErr = "Le genre doit être soit 'homme' soit 'femme'";
-        }
     }
-    
-    include('php/EntreeDonneBDD.php'); 
+    if ($nameErr == "" && $firstnameErr == "" && $emailErr == "" && $newpasswordErr == "" && $birthdateErr == "" && $weightErr == "" && $heightErr == "" && $genderErr == "") {
+        include('php/EntreeDonneBDD.php');
+        header("Location: php/test.php");
+        exit;
+    }
 
 }
-
-/*
-echo "Nom: " . $name . "<br>";
-echo "Prénom: " . $firstname . "<br>";
-echo "Email: " . $email . "<br>";
-echo "Mot de passe: " . $newpassword . "<br>";
-echo "Date de naissance: " . $birthdate . "<br>";
-echo "Poids: " . $weight . "<br>";
-echo "Taille: " . $height . "<br>";
-echo "Genre: " . $gender . "<br>";
-*/
-
 
 ?>
