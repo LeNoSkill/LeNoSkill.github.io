@@ -41,7 +41,7 @@
 <body>
     <div class="header finisher-header"></div>
     <div class="container" id="body"> 
-        <form id="connexion-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form id="connexion-form" method="post" novalidate action="php/Verifutilisateur.php" method="POST">
             <label for="theme" class="theme">
                 <span class="theme__toggle-wrap">
                     <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">

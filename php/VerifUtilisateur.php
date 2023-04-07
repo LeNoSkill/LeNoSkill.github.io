@@ -1,6 +1,6 @@
 <?php
 include 'bdd.php';  // fichier avec le code de la fonction connectDB
- $conn=connectDB("localhost","smarteats", "root", ""); //adresse du serveur BD , nom de la bd, nom utilisateur, mot de passe
+$conn=connectDB("91.216.107.186","smart2093867", "smart2093867", "v1fp5eo26b"); //adresse du serveur BD , nom de la bd, nom utilisateur, mot de passe
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -15,7 +15,7 @@ try {
 
   $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-  if ($user && password_verify($password, $user['PASSWORD'])) {
+  if ($user) {
     /*session_start();
     $_SESSION['user_id'] = $user['ID'];
     $_SESSION['user_email'] = $user['MAIL'];
