@@ -1,33 +1,39 @@
 <?php
-include 'bdd.php';  // fichier avec le code de la fonction connectDB
-$conn=connectDB("localhost","smarteats", "root", ""); //adresse du serveur BD , nom de la bd, nom utilisateur, mot de passe
-
-$email = $_POST['email'];
-$password = $_POST['password'];
-
-echo "Email: " . $email . "<br>";
-echo "Password: " . $password . "<br>";
+include 'bdd.php';
+$conn = connectDB("localhost", "smarteats", "root", "");
 
 try {
-  $query = "SELECT * FROM utilisateurs WHERE MAIL = ?";
-  $statement = $conn->prepare($query);
-  $statement->execute([$email]);
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 
-  $user = $statement->fetch(PDO::FETCH_ASSOC);
+    // Vérifie si l'e-mail existe dans la base de données
+    $emailCheckStmt = $conn->prepare("SELECT * FROM utilisateurs WHERE MAIL = :MAIL");
+    $emailCheckStmt->bindParam(':MAIL', $email);
+    $emailCheckStmt->execute();
 
-  if ($user) {
-    /*session_start();
-    $_SESSION['user_id'] = $user['ID'];
-    $_SESSION['user_email'] = $user['MAIL'];
-    $_SESSION['user_name'] = $user['NOM'];
-    $_SESSION['user_firstname'] = $user['PRENOM'];*/
-    echo "ok";
-  } else {
-    echo "Adresse email ou mot de passe incorrect";
-  }
-} catch(PDOException $e) {
-  echo "Error: " . $e->getMessage();
+    if ($emailCheckStmt->rowCount() > 0) {
+        // Si l'e-mail existe, récupérez le mot de passe haché
+        $user = $emailCheckStmt->fetch(PDO::FETCH_ASSOC);
+        $hash = $user['PASSWORD'];
+        echo "Submitted password: " . $password . "<br>";
+        echo "Stored hash: " . $hash . "<br>";
+        // Vérifiez si le mot de passe soumis correspond au mot de passe haché enregistré
+        if (password_verify($password, $hash)) {
+            // Connexion réussie, démarrez une session et redirigez l'utilisateur
+            session_start();
+            $_SESSION['user_id'] = $user['ID'];
+            header("Location: test.php");
+        } else {
+            // Mot de passe incorrect
+            
+            echo "<script>alert('Mot de passe incorrect.'); window.history.back();</script>";
+        }
+    } else {
+        // L'e-mail n'existe pas
+        echo "<script>alert('Adresse e-mail inconnue.'); window.history.back();</script>";
+    }
+
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
 }
-
-
 ?>

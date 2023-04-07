@@ -1,13 +1,10 @@
-drop database if exists smarteats;
-create database if not exists smarteats character set ='utf8';
-use smarteats;
 
 -- Table des utilisateurs 
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `TYPE` int NOT NULL,
   `MAIL` varchar(100) NOT NULL,
-  `PASSWORD` varchar(50) NOT NULL,
+  `PASSWORD` varchar(200) NOT NULL,
   `NOM` varchar(50) NOT NULL,
   `PRENOM` varchar(50) NOT NULL,
   `DATENAISSANCE` date NOT NULL,

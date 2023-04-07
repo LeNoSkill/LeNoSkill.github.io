@@ -9,7 +9,7 @@
     <script src="js/finisher-header.es5.min.js" type="text/javascript"></script>
     <script src="js/backgroundanimation.js" type="text/javascript"></script>
     <script src="js/jquery-3.6.3.js"></script>
-    <script src="js/connexion.js"></script>
+    <!--<script src="js/connexion.js"></script>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script>
         /*APPARITION ET D4ISPARITION FORMULAIRE DE CONNEXION*/
@@ -41,7 +41,7 @@
 <body>
     <div class="header finisher-header"></div>
     <div class="container" id="body"> 
-        <form id="connexion-form" method="post" novalidate action="php/Verifutilisateur.php" method="POST">
+        <form id="connexion-form"  action="php/VerifUtilisateur.php" method="post">
             <label for="theme" class="theme">
                 <span class="theme__toggle-wrap">
                     <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
