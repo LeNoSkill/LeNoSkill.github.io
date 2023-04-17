@@ -13,6 +13,7 @@
     }
 
     .navbar-brand {
+      font-size: 30px;
       font-weight: bold;
     }
 
@@ -58,10 +59,16 @@
             <a class="nav-link" href="#"><i class="fas fa-utensils"></i> Recettes</a>
           </li>
           <li class="nav-item">
+             <a class="nav-link" href="#"><i class="fas fa-running"></i> Exercices physiques</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> À propos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
           </li>
         </ul>
       </div>
