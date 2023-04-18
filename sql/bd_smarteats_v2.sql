@@ -6,7 +6,7 @@
 -- Généré le : mar. 18 avr. 2023 à 14:26
 -- Version du serveur : 10.3.36-MariaDB-0+deb10u2
 -- Version de PHP : 7.3.31-1~deb10u2
-
+drop database if exists smarteats;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `smart2093867`
 --
-CREATE DATABASE IF NOT EXISTS `smarteats` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS `smarteats` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `smarteats`;
 
 -- --------------------------------------------------------
