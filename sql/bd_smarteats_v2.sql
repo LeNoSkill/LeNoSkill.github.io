@@ -131,7 +131,6 @@ INSERT INTO `utilisateurs` (`ID`, `TYPE`, `MAIL`, `PASSWORD`, `NOM`, `PRENOM`, `
 (2, 0, 'odoakd@gmail.com', '$2y$10$QOWJFPOO.N3zUQ7RzX6oCet35vaapkhmEfTjvEmX3A817G.u/3DJy', 'Criquillion', 'Louis', '1993-02-26', 123.0, 123.0, 'H'),
 (3, 0, 'manon240204@gmail.com', '$2y$10$cz/JZ5cZMITkDYShg5fF.eLjBcMjAbRBe3WoZ/kINoOBbEyzE.03C', 'de Heinzelin', 'Manon', '2004-02-24', 55.0, 167.0, 'F'),
 (4, 0, 'jules.criquillion@gmail.com', '$2y$10$f762whkx2RTgFZ4A/nSwoeX1.VjyNlg2bFoa5VfrObKqNXRtximJe', 'Criquillion ', 'Jules', '2007-09-25', 70.0, 172.0, 'H'),
-(5, 0, 'christelleingnomeriello@gmail.com', '$2y$10$DqYcpXWquB62F6/Qlecl3eP/hmdPhNtCZoCHdyK/Wl72lzAmZ8Gni', 'Ingnomeriello ', 'Christelle ', '1970-10-09', 87.0, 160.0, 'F');
 
 --
 -- Index pour les tables déchargées
