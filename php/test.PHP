@@ -6,6 +6,7 @@
   <title>Smarteats</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="../js/logout.js"></script>
 
   <style>
     body {
@@ -68,7 +69,7 @@
             <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+          <a class="nav-link" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
           </li>
         </ul>
       </div>
