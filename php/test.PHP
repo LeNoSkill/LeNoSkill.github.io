@@ -11,36 +11,50 @@
   <link rel="stylesheet" href="../css/pageprincipale.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <img src="../img/logo.png" alt="Logo" style="height: 150px;">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-home"></i> Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-utensils"></i> Recettes</a>
-          </li>
-          <li class="nav-item">
-             <a class="nav-link" href="#"><i class="fas fa-running"></i> Exercices physiques</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#apropos"><i class="fas fa-info-circle"></i> À propos</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#footer"><i class="fas fa-envelope"></i> Contact</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
-          </li>
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <img src="../img/logo.png" alt="Logo" style="height: 150px;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-home"></i> Accueil</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-utensils"></i> Recettes
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Afficher</a></li>
+                <li><a class="dropdown-item" href="#">Ajouter</a></li>
+                <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-running"></i> Exercices physiques
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Afficher</a></li>
+                <li><a class="dropdown-item" href="#">Ajouter</a></li>
+                <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#apropos"><i class="fas fa-info-circle"></i> À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer"><i class="fas fa-envelope"></i> Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <section class="jumbotron">
     <div class="container">
