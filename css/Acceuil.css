@@ -125,7 +125,7 @@ input[type="radio"] {
 
 button[type="submit"] {
   width: 100%;
-  background-color: #ffd747;
+  background-color: #84ff47;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -137,7 +137,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #f5a623;
+  background-color: #36bc2f;
 }
 
 
@@ -152,7 +152,7 @@ label.theme[for="theme"] .theme__toggle-wrap {
 
 button {
   width: 100%;
-  background-color: #ffd747;
+  background-color: #84ff47;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -164,7 +164,7 @@ button {
 }
 
 button:hover {
-  background-color: #f5a623;
+  background-color: #36bc2f;
 }
 
 /* ICI JUSQUE COMMENTAIRE CSS POUR LE BOUTON JOUR NUIT*/

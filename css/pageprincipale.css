@@ -31,3 +31,31 @@ body {
     max-height: 400px;
     object-fit: cover;
   }
+
+  /* Styles de base pour la description des personnes */
+.person p {
+  font-size: 18px;
+}
+
+/* Styles spécifiques pour les écrans plus petits (tablette) */
+@media (max-width: 768px) {
+  .person p {
+    font-size: 16px;
+  }
+}
+
+/* Styles spécifiques pour les écrans encore plus petits (mobile) */
+@media (max-width: 480px) {
+  .person p {
+    font-size: 14px;
+  }
+}
+  
+  .person img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  

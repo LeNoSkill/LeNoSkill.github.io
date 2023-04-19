@@ -29,7 +29,7 @@
              <a class="nav-link" href="#"><i class="fas fa-running"></i> Exercices physiques</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> À propos</a>
+          <a class="nav-link" href="#apropos"><i class="fas fa-info-circle"></i> À propos</a>
           </li>
           <li class="nav-item">
           <a class="nav-link" href="#footer"><i class="fas fa-envelope"></i> Contact</a>
@@ -73,17 +73,45 @@
 
   <div class="container">
     <!-- Ajoutez ici le contenu de votre site internet -->
-    Bienvenue sur SmartEats, votre source quotidienne de recettes équilibrées et saines !
+      <p>Bienvenue sur SmartEats, votre source quotidienne de recettes équilibrées et saines !</p>
 
-Notre objectif est de vous aider à maintenir un mode de vie sain en vous proposant chaque jour de nouvelles recettes délicieuses et faciles à préparer. Nous savons que manger sainement peut parfois sembler difficile, c'est pourquoi nous avons créé SmartEats pour vous simplifier la vie.
+      <p>Notre objectif est de vous aider à maintenir un mode de vie sain en vous proposant chaque jour de nouvelles recettes délicieuses et faciles à préparer. Nous savons que manger sainement peut parfois sembler difficile, c'est pourquoi nous avons créé SmartEats pour vous simplifier la vie.</p>
 
-Nos recettes sont sélectionnées avec soin par notre équipe de nutritionnistes et de chefs expérimentés pour garantir que chaque plat soit équilibré, savoureux et nourrissant. Nous avons des options pour tous les goûts et tous les régimes alimentaires, que vous soyez végétarien, végétalien, sans gluten ou simplement à la recherche d'options plus saines pour vos repas.
+      <p>Nos recettes sont sélectionnées avec soin par notre équipe de nutritionnistes et de chefs expérimentés pour garantir que chaque plat soit équilibré, savoureux et nourrissant. Nous avons des options pour tous les goûts et tous les régimes alimentaires, que vous soyez végétarien, végétalien, sans gluten ou simplement à la recherche d'options plus saines pour vos repas.</p>
 
-Nous sommes fiers de vous offrir une variété de recettes, allant des petits déjeuners sains et énergisants aux dîners satisfaisants et copieux. Vous trouverez également des recettes pour les collations, les smoothies, les desserts et bien plus encore.
+      <p>Nous sommes fiers de vous offrir une variété de recettes, allant des petits déjeuners sains et énergisants aux dîners satisfaisants et copieux. Vous trouverez également des recettes pour les collations, les smoothies, les desserts et bien plus encore.</p>
 
-Abonnez-vous à notre newsletter pour recevoir nos recettes quotidiennes directement dans votre boîte de réception. Vous pouvez également nous suivre sur les réseaux sociaux pour des conseils de nutrition, des astuces culinaires et des idées de repas rapides et sains.
+      <p>Abonnez-vous à notre newsletter pour recevoir nos recettes quotidiennes directement dans votre boîte de réception. Vous pouvez également nous suivre sur les réseaux sociaux pour des conseils de nutrition, des astuces culinaires et des idées de repas rapides et sains.</p>
 
-Rejoignez notre communauté de mangeurs sains et découvrez à quel point il peut être facile de se nourrir sainement avec SmartEats.
+      <p>Rejoignez notre communauté de mangeurs sains et découvrez à quel point il peut être facile de se nourrir sainement avec SmartEats.
+
+<section id="apropos">
+  <br/><h2 class="text-center"><u>À propos des créateurs</u></h2><br/>
+  <div class="row">
+    <div class="col-md-4 person">
+      <img src="../img/Louis.jpg" alt="Créateur 1">
+      <h3>Criquillion Louis</h3>
+      <p>
+        Pas le pote de Matéo a été exploiter pour se site.
+      </p>
+    </div>
+    <div class="col-md-4 person">
+      <img src="../img/Francesco.png" alt="Créateur 2">
+      <h3>Francesco Battista</h3>
+      <p>
+        le fr , le sang , a aider mentalement et a essayé de mettre matéo sur la bonne voie.
+      </p>
+    </div>
+    <div class="col-md-4 person">
+      <img src="../img/Mateo.jpg" alt="Créateur 3">
+      <h3>Matéo Fontaine</h3>
+      <p>
+        Na rien coder de ce site internet juste le remplissage de la base de données qu'il avait mal construite.
+      </p>
+    </div>
+  </div>
+</section>
+
   </div>
 
 
@@ -91,7 +119,7 @@ Rejoignez notre communauté de mangeurs sains et découvrez à quel point il peu
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <h4>Contactez-nous</h4>
+        <h4><u>Contactez-nous</u></h4>
         <p>
           Adresse : 159 Chausée de Binche, 7000 Mons<br>
           Téléphone : +32 478 17 17 52<br>
@@ -99,7 +127,7 @@ Rejoignez notre communauté de mangeurs sains et découvrez à quel point il peu
         </p>
       </div>
       <div class="col-md-4">
-        <h4>Réseaux sociaux</h4>
+        <h4><u>Réseaux sociaux</u></h4>
         <p>
           <a href="https://www.facebook.com/smarteats" style="color: #fff; text-decoration: none;">
             <i class="fab fa-facebook-square"></i> Facebook
@@ -113,7 +141,7 @@ Rejoignez notre communauté de mangeurs sains et découvrez à quel point il peu
         </p>
       </div>
       <div class="col-md-4">
-        <h4>Liens utiles</h4>
+        <h4><u>Liens utiles</u></h4>
         <ul>
           <li><a href="#" style="color: #fff; text-decoration: none;">Mentions légales</a></li>
           <li><a href="#" style="color: #fff; text-decoration: none;">Politique de confidentialité</a></li>
