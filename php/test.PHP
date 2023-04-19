@@ -7,42 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="../js/logout.js"></script>
-
-  <style>
-    body {
-      background-color: #3cbd41;
-    }
-
-    .navbar-brand {
-      font-size: 30px;
-      font-weight: bold;
-    }
-
-    .jumbotron {
-      background-image: url('images/header.jpg');
-      background-size: cover;
-      color: black;
-      text-align: center;
-    }
-
-    .jumbotron h1 {
-      font-size: 4em;
-      font-weight: bold;
-    }
-
-    .jumbotron p {
-      font-size: 1.5em;
-    }
-
-    .container {
-      margin-top: 40px;
-    }
-
-    .carousel img {
-      max-height: 400px;
-      object-fit: cover;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/pageprincipale.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

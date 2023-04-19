@@ -1,0 +1,33 @@
+body {
+    background-color: #3cbd41;
+  }
+
+  .navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .jumbotron {
+    background-image: url('images/header.jpg');
+    background-size: cover;
+    color: black;
+    text-align: center;
+  }
+
+  .jumbotron h1 {
+    font-size: 4em;
+    font-weight: bold;
+  }
+
+  .jumbotron p {
+    font-size: 1.5em;
+  }
+
+  .container {
+    margin-top: 40px;
+  }
+
+  .carousel img {
+    max-height: 400px;
+    object-fit: cover;
+  }
