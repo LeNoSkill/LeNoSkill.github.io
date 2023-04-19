@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Smarteats</title>
+  <link rel="icon" href="../img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="../js/logout.js"></script>
@@ -12,7 +13,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Smarteats</a>
+      <img src="../img/logo.png" alt="Logo" style="height: 150px;">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,7 +32,7 @@
             <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> À propos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contact</a>
+          <a class="nav-link" href="#footer"><i class="fas fa-envelope"></i> Contact</a>
           </li>
           <li class="nav-item">
           <a class="nav-link" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
@@ -86,7 +87,7 @@ Rejoignez notre communauté de mangeurs sains et découvrez à quel point il peu
   </div>
 
 
-  <footer style="background-color: #000; color: #fff; padding: 20px;">
+  <footer style="background-color: #000; color: #fff; padding: 20px;" id="footer">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
