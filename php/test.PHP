@@ -60,7 +60,7 @@
     </nav>
 
 
-
+<div id="main-content">
   <section class="jumbotron">
     <div class="container">
       <h1>Smarteats</h1>
@@ -130,6 +130,7 @@
     </div>
   </div>
 </section>
+</div>
 
   </div>
   <div id="recetteCards" class="row row-cols-1 row-cols-md-4 g-4">
@@ -179,6 +180,22 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   <script>
       $(document).ready(function () {
+        $("#main-content").hide();
+        $("#apropos").hide();
+  
+  // Affiche les recettes au chargement de la page
+  $("#afficherrecette").click();
+
+  // Gère le clic sur "Accueil"
+  $(".nav-link[href='#']").click(function (event) {
+    event.preventDefault(); // Empêche le comportement par défaut du lien
+    if ($(this).text().trim() === "Accueil") {
+      $("#recetteCards").hide();
+      $("#main-content").show();
+      $("#apropos").show();
+    }
+  });
+
         $("#afficherrecette").click(function () {
           $.get("recetteTest.php", function () { alert("fonction callback success") }, "json")
 
