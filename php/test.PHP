@@ -10,6 +10,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../js/logout.js"></script>
   <link rel="stylesheet" href="../css/pageprincipale.css">
+  <style>
+  </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -58,7 +60,7 @@
     </nav>
 
 
-<div id="recettes">
+
   <section class="jumbotron">
     <div class="container">
       <h1>Smarteats</h1>
@@ -130,6 +132,7 @@
 </section>
 
   </div>
+  <div id="recetteCards" class="row row-cols-1 row-cols-md-4 g-4">
 </div>
 
   <footer style="background-color: #000; color: #fff; padding: 20px;" id="footer">
@@ -185,25 +188,23 @@
 
               alert(data.length);
 
-              // Créer le tableau et l'ajouter à la div avec l'id "Div_XML"
-              var table = $('<table>').appendTo("#recettes");
-
-              // Créer la première ligne d'en-tête du tableau (thead)
-              var thead = $('<thead>').appendTo(table);
-              var tr = $('<tr>').appendTo(thead);
-
-              // Ajouter les titres de colonne à la ligne d'en-tête
-              $('<th>').text("ID").appendTo(tr);
-              $('<th>').text("NOM").appendTo(tr);
-
-              // Ajouter les données du tableau dans le corps du tableau (tbody)
-              var tbody = $('<tbody>').appendTo(table);
-
               // Parcourir les objets dans data et ajouter les valeurs dans le tableau
               for (var obj of data) {
-                tr = $('<tr>').appendTo(tbody);
-                $('<td>').text(obj.ID).appendTo(tr);
-                $('<td>').text(obj.nom_recette).appendTo(tr);
+                var card = $('<div>').addClass('col').appendTo('#recetteCards');
+                var cardInner = $('<div>').addClass('card h-100').appendTo(card);
+                $('<img>').attr('src', obj.image_url).addClass('card-img-top').css('max-height', '200px').appendTo(cardInner);
+                var cardBody = $('<div>').addClass('card-body').appendTo(cardInner);
+                $('<h5>').text(obj.nom_recette).addClass('card-title').appendTo(cardBody);
+                $('<p>').text('Temps de préparation : ' + obj.temps_preparation).appendTo(cardBody);
+                $('<p>').text('Temps de cuisson : ' + obj.temps_cuisson).appendTo(cardBody);
+                $('<p>').text('Instructions : ' + obj.instructions_preparation).appendTo(cardBody);
+                $('<p>').text('Ingrédients : ' + obj.liste_ingredients).appendTo(cardBody);
+                var cardFooter = $('<div>').addClass('card-footer').appendTo(cardInner);
+                $('<small>').text('Calories : ' + obj.calories_par_portion).appendTo(cardFooter);
+                $('<small>').text('Protéines : ' + obj.proteines_par_portion).appendTo(cardFooter);
+                $('<small>').text('Glucides : ' + obj.glucides_par_portion).appendTo(cardFooter);
+                $('<small>').text('Graisses : ' + obj.graisses_par_portion).appendTo(cardFooter);
+                $('<small>').text('Fibres : ' + obj.fibres_par_portion).appendTo(cardFooter);
               }
 
 
