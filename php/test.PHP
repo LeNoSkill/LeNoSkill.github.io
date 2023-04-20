@@ -7,6 +7,7 @@
   <link rel="icon" href="../img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../js/logout.js"></script>
   <link rel="stylesheet" href="../css/pageprincipale.css">
 </head>
@@ -27,7 +28,7 @@
                 <i class="fas fa-utensils"></i> Recettes
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Afficher</a></li>
+                <li><a class="dropdown-item" href="#" id="afficherrecette">Afficher</a></li>
                 <li><a class="dropdown-item" href="#">Ajouter</a></li>
                 <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
               </ul>
@@ -56,6 +57,8 @@
       </div>
     </nav>
 
+
+<div id="recettes">
   <section class="jumbotron">
     <div class="container">
       <h1>Smarteats</h1>
@@ -127,7 +130,7 @@
 </section>
 
   </div>
-
+</div>
 
   <footer style="background-color: #000; color: #fff; padding: 20px;" id="footer">
   <div class="container">
@@ -168,9 +171,63 @@
 
   
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  <script>
+      $(document).ready(function () {
+        $("#afficherrecette").click(function () {
+          $.get("recetteTest.php", function () { alert("fonction callback success") }, "json")
+
+            .done(function (data) {
+
+              alert("success .done ");
+
+              alert(data.length);
+
+              // Créer le tableau et l'ajouter à la div avec l'id "Div_XML"
+              var table = $('<table>').appendTo("#recettes");
+
+              // Créer la première ligne d'en-tête du tableau (thead)
+              var thead = $('<thead>').appendTo(table);
+              var tr = $('<tr>').appendTo(thead);
+
+              // Ajouter les titres de colonne à la ligne d'en-tête
+              $('<th>').text("ID").appendTo(tr);
+              $('<th>').text("NOM").appendTo(tr);
+
+              // Ajouter les données du tableau dans le corps du tableau (tbody)
+              var tbody = $('<tbody>').appendTo(table);
+
+              // Parcourir les objets dans data et ajouter les valeurs dans le tableau
+              for (var obj of data) {
+                tr = $('<tr>').appendTo(tbody);
+                $('<td>').text(obj.ID).appendTo(tr);
+                $('<td>').text(obj.nom_recette).appendTo(tr);
+              }
+
+
+            })
+
+            .fail(function (error) {
+
+              alert("error détectée:" + error.responseText);
+
+              $("#recettes").append(error.responseText);
+
+            })
+
+            .always(function () {
+
+              alert("finished");
+
+
+            });
+        })
+      })
+
+
+    </script>
 
   
 </body>
