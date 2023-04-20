@@ -218,10 +218,10 @@
                 $('<p>').text('Ingrédients : ' + obj.liste_ingredients).appendTo(cardBody);
                 var cardFooter = $('<div>').addClass('card-footer').appendTo(cardInner);
                 $('<small>').text('Calories : ' + obj.calories_par_portion).appendTo(cardFooter);
-                $('<small>').text('Protéines : ' + obj.proteines_par_portion).appendTo(cardFooter);
-                $('<small>').text('Glucides : ' + obj.glucides_par_portion).appendTo(cardFooter);
-                $('<small>').text('Graisses : ' + obj.graisses_par_portion).appendTo(cardFooter);
-                $('<small>').text('Fibres : ' + obj.fibres_par_portion).appendTo(cardFooter);
+                $('<small>').text(' Protéines : ' + obj.proteines_par_portion).appendTo(cardFooter);
+                $('<small>').text(' Glucides : ' + obj.glucides_par_portion).appendTo(cardFooter);
+                $('<small>').text(' Graisses : ' + obj.graisses_par_portion).appendTo(cardFooter);
+                $('<small>').text(' Fibres : ' + obj.fibres_par_portion).appendTo(cardFooter);
               }
 
 
