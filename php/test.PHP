@@ -198,10 +198,8 @@
 
   // Gère le clic sur "Recettes"
   $("#afficherrecette").click(function () {
-    $.get("recetteTest.php", function () { alert("fonction callback success") }, "json")
+    $.get("recetteTest.php", function () { }, "json")
       .done(function (data) {
-        alert("success .done ");
-        alert(data.length);
         // Parcourir les objets dans data et ajouter les valeurs dans le tableau
         if(i<data.length){
           for (var obj of data) {
@@ -229,9 +227,6 @@
         alert("error détectée:" + error.responseText);
         $("#recettes").append(error.responseText);
       })
-      .always(function () {
-        alert("finished");
-      });
   });
 });
 
