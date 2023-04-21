@@ -32,7 +32,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#" id="afficherrecette">Afficher</a></li>
                 <li><a class="dropdown-item" href="#">Ajouter</a></li>
-                <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
+                <li><a class="dropdown-item" href="#" id="modif">Modifier/Supprimer</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -131,10 +131,27 @@
   </div>
 </section>
 </div>
+</div>
+
+<div class="container" id="recherche">
+  <div class="row">
+    <div class="col-md-8">
+      <input type="text" id="searchRecipe" class="form-control" placeholder="Recherchez une recette par nom">
+    </div>
+    <div class="col-md-4">
+      <button id="searchBtn" class="btn btn-primary">Chercher</button>
+    </div>
+  </div>
+  <div id="editFormContainer" style="display:none;">
+    <!-- Le formulaire de modification sera généré ici -->
+  </div>
+</div>
+
+
 
   </div>
   <div id="recetteCards" class="row row-cols-1 row-cols-md-4 g-4">
-</div>
+  </div>
 
   <footer style="background-color: #000; color: #fff; padding: 20px;" id="footer">
   <div class="container">
@@ -183,7 +200,7 @@
         let i = 0 ;
   // Affiche les recettes et cache le reste
   $("#afficherrecette").click(function() {
-    $("#main-content, #apropos").hide();
+    $("#main-content,#apropos,#recherche").hide();
     $("#recetteCards").show();
   });
 
@@ -191,8 +208,8 @@
   $(".nav-link[href='#']").click(function (event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
     if ($(this).text().trim() === "Accueil") {
-      $("#recetteCards").hide();
-      $("#main-content, #apropos").show(); // Afficher ces éléments
+      $("#recetteCards,#recherche").hide();
+      $("#main-content, #apropos,#footer").show(); // Afficher ces éléments
     }
   });
 
@@ -231,6 +248,16 @@
 });
 
 
+    </script>
+    <!--fonction pour modif-->
+    <script>
+      $(document).ready(function () {
+        $("#recherche").hide();
+        $("#modif").click(function() {
+        $("#apropos,#recetteCards,#main-content,#apropos,#footer").hide();
+        $("#recherche").show();
+      });
+    });
     </script>
 
   
