@@ -30,14 +30,18 @@ $.get("recetteTest.php", function () { }, "json")
       $('<h5>').text(obj.nom_recette).addClass('card-title').appendTo(cardBody);
       $('<p>').text('Temps de préparation : ' + obj.temps_preparation).appendTo(cardBody);
       $('<p>').text('Temps de cuisson : ' + obj.temps_cuisson).appendTo(cardBody);
-      $('<p>').text('Instructions : ' + obj.instructions_preparation).appendTo(cardBody);
-      $('<p>').text('Ingrédients : ' + obj.liste_ingredients).appendTo(cardBody);
+      $('<p>').html('<u>Instructions</u><br>' + obj.instructions_preparation.replace(/\./g, '.<br><br>')).appendTo(cardBody);
+      $('<p>').html('<u>Ingrédients : </u><br>' + obj.liste_ingredients.replace(/\-/g, '<br>')).appendTo(cardBody);
       var cardFooter = $('<div>').addClass('card-footer').appendTo(cardInner);
-      $('<small>').text('Calories : ' + obj.calories_par_portion).appendTo(cardFooter);
-      $('<small>').text(' Protéines : ' + obj.proteines_par_portion).appendTo(cardFooter);
-      $('<small>').text(' Glucides : ' + obj.glucides_par_portion).appendTo(cardFooter);
-      $('<small>').text(' Graisses : ' + obj.graisses_par_portion).appendTo(cardFooter);
-      $('<small>').text(' Fibres : ' + obj.fibres_par_portion).appendTo(cardFooter);
+      $('<small>').html('<i class="fas fa-fire"></i> Calories : ' + obj.calories_par_portion).appendTo(cardFooter);
+      $('<br>').appendTo(cardFooter);
+      $('<small>').html(' <i class="fas fa-dumbbell"></i> Protéines : ' + obj.proteines_par_portion).appendTo(cardFooter);
+      $('<br>').appendTo(cardFooter);
+      $('<small>').html(' <i class="fas fa-bread-slice"></i> Glucides : ' + obj.glucides_par_portion).appendTo(cardFooter);
+      $('<br>').appendTo(cardFooter);
+      $('<small>').html(' <i class="fas fa-tint"></i> Graisses : ' + obj.graisses_par_portion).appendTo(cardFooter);
+      $('<br>').appendTo(cardFooter);
+      $('<small>').html(' <i class="fa-brands fa-pagelines"></i> Fibres : ' + obj.fibres_par_portion).appendTo(cardFooter);
     }
     }
     
