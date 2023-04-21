@@ -134,7 +134,10 @@
 <div class="container" id="recherche">
   <div class="row">
     <div class="col-md-8">
-      <input type="text" id="searchRecipe" class="form-control" placeholder="Recherchez une recette par nom">
+      <!--<input type="text" id="searchRecipe" class="form-control" placeholder="Recherchez une recette par nom">-->
+      <select id="recipeSelect" class="form-control">
+        <!-- Les options seront générées dynamiquement ici -->
+      </select>
     </div>
     <div class="col-md-4">
       <button id="searchBtn" class="btn btn-primary">Chercher</button>
@@ -144,6 +147,7 @@
     <!-- Le formulaire de modification sera généré ici -->
   </div>
 </div>
+
 
 
 
@@ -193,6 +197,35 @@
   <script src="../js/logout.js"></script>
   <script src="../js/afficherRecette.js"></script>
   <script src="../js/modifierRecette.js"></script>
+  <script>
+// Récupération des recettes et remplissage de la liste déroulante
+function loadRecipes() {
+  $.ajax({
+    url: 'recetteTest.php',
+    type: 'GET',
+    dataType: 'json',
+    success: function (data) {
+      // Remplissage de la liste déroulante avec les recettes récupérées
+      data.forEach(function (recipe) {
+        $('#recipeSelect').append($('<option>', {
+          value: recipe.ID,
+          text: recipe.nom_recette
+        }));
+      });
+    },
+    error: function (error) {
+      console.error("Erreur lors de la récupération des recettes :", error);
+    }
+  });
+}
+
+// Charge les recettes lors du chargement de la page
+$(document).ready(function () {
+  loadRecipes();
+});
+
+
+  </script>
 
   
 </body>
