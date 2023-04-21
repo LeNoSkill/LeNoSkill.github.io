@@ -7,8 +7,6 @@
   <link rel="icon" href="../img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../js/logout.js"></script>
   <link rel="stylesheet" href="../css/pageprincipale.css">
   <style>
   </style>
@@ -189,76 +187,12 @@
   </div>
 </footer>
 
-
-  
-
-  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-  <script>
-      $(document).ready(function () {
-        let i = 0 ;
-  // Affiche les recettes et cache le reste
-  $("#afficherrecette").click(function() {
-    $("#main-content,#apropos,#recherche").hide();
-    $("#recetteCards").show();
-  });
-
-  // Gère le clic sur "Accueil"
-  $(".nav-link[href='#']").click(function (event) {
-    event.preventDefault(); // Empêche le comportement par défaut du lien
-    if ($(this).text().trim() === "Accueil") {
-      $("#recetteCards,#recherche").hide();
-      $("#main-content, #apropos,#footer").show(); // Afficher ces éléments
-    }
-  });
-
-  // Gère le clic sur "Recettes"
-  $("#afficherrecette").click(function () {
-    $.get("recetteTest.php", function () { }, "json")
-      .done(function (data) {
-        // Parcourir les objets dans data et ajouter les valeurs dans le tableau
-        if(i<data.length){
-          for (var obj of data) {
-          i=data.length
-          var card = $('<div>').addClass('col').appendTo('#recetteCards');
-          var cardInner = $('<div>').addClass('card h-100').appendTo(card);
-          $('<img>').attr('src', obj.image_url).addClass('card-img-top').css('max-height', '200px').appendTo(cardInner);
-          var cardBody = $('<div>').addClass('card-body').appendTo(cardInner);
-          $('<h5>').text(obj.nom_recette).addClass('card-title').appendTo(cardBody);
-          $('<p>').text('Temps de préparation : ' + obj.temps_preparation).appendTo(cardBody);
-          $('<p>').text('Temps de cuisson : ' + obj.temps_cuisson).appendTo(cardBody);
-          $('<p>').text('Instructions : ' + obj.instructions_preparation).appendTo(cardBody);
-          $('<p>').text('Ingrédients : ' + obj.liste_ingredients).appendTo(cardBody);
-          var cardFooter = $('<div>').addClass('card-footer').appendTo(cardInner);
-          $('<small>').text('Calories : ' + obj.calories_par_portion).appendTo(cardFooter);
-          $('<small>').text(' Protéines : ' + obj.proteines_par_portion).appendTo(cardFooter);
-          $('<small>').text(' Glucides : ' + obj.glucides_par_portion).appendTo(cardFooter);
-          $('<small>').text(' Graisses : ' + obj.graisses_par_portion).appendTo(cardFooter);
-          $('<small>').text(' Fibres : ' + obj.fibres_par_portion).appendTo(cardFooter);
-        }
-        }
-        
-      })
-      .fail(function (error) {
-        alert("error détectée:" + error.responseText);
-        $("#recettes").append(error.responseText);
-      })
-  });
-});
-
-
-    </script>
-    <!--fonction pour modif-->
-    <script>
-      $(document).ready(function () {
-        $("#recherche").hide();
-        $("#modif").click(function() {
-        $("#apropos,#recetteCards,#main-content,#apropos,#footer").hide();
-        $("#recherche").show();
-      });
-    });
-    </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/afficherRecette.js"></script>
+  <script src="../js/modifierRecette.js"></script>
 
   
 </body>
