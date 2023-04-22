@@ -44,6 +44,12 @@
               </ul>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-barcode"></i> Scanner</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-heart"></i> Favoris</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#apropos"><i class="fas fa-info-circle"></i> À propos</a>
             </li>
             <li class="nav-item">
