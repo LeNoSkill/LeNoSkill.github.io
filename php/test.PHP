@@ -320,7 +320,7 @@ $("#searchBtn").on("click", function () {
       $("#deleteBtn").on("click", function () {
         if (confirm("Êtes-vous sûr de vouloir supprimer cette recette ?")) {
           $.ajax({
-            url: "deleteRecipe.php",
+            url: "supprimerRecette.php",
             type: "POST",
             data: { id: recipe.ID },
             success: function (response) {
