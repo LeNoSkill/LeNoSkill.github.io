@@ -203,6 +203,7 @@
   <script src="../js/logout.js"></script>
   <script src="../js/afficherRecette.js"></script>
   <script src="../js/modifierRecette.js"></script>
+  <script src="../js/ajouter.js"></script>
   <script>
 // Récupération des recettes et remplissage de la liste déroulante
 function loadRecipes() {
