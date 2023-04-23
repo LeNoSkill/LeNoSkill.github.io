@@ -29,7 +29,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#" id="afficherrecette">Afficher</a></li>
-                <li><a class="dropdown-item" href="#">Ajouter</a></li>
+                <li><a class="dropdown-item" href="#" id="ajouter">Ajouter</a></li>
                 <li><a class="dropdown-item" href="#" id="modif">Modifier/Supprimer</a></li>
               </ul>
             </li>
@@ -349,6 +349,8 @@ $("#searchBtn").on("click", function () {
 
 
   </script>
+
+
 
   
 </body>
