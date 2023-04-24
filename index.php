@@ -74,19 +74,19 @@
             <p id="inscription-link">Vous n'avez pas de compte ? <a onclick="openInscriptionForm()"><u>S'inscrire</u></a></p>
         </form>
         
-        <div class="inscription-form" id="inscription-form" style="display:none;">
-        <?php include('Traitement_Donne.php')?>
+        <div class="inscription-form" id="inscription-form" style="display:none;" action="Traitement_Donne.php" method="post">
+        <?php include('Traitement_Donne.php');?>
             <h1>Inscription</h1>
             <p><span class="error">* champ obligatoire</span></p><br><br>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
                 <label for="name">Nom :</label>
                 <span class="error">* <?php echo $nameErr; ?></span><br>
-                <input type="text" id="name" name="name" pattern="[A-Za-z\s]{0,50}" title="Le prenom du maitre de stage doit comporte au maximum 50 caractères!" required>
+                <input type="text" id="name" name="name" pattern="[A-Za-z\s]{0,50}" title="Votre nom doit comporte au maximum 50 caractères!" required>
                 
                 <label for="firstname">Prénom :</label>
                 <span class="error">* <?php echo $firstnameErr; ?></span><br>
-                <input type="text" id="firstname" name="firstname" pattern="[A-Za-z\s]{0,50}" title="Le prenom du maitre de stage doit comporte au maximum 50 caractères!" required>
+                <input type="text" id="firstname" name="firstname" pattern="[A-Za-z\s]{0,50}" title="Votre prénom du maitre de stage doit comporte au maximum 50 caractères!" required>
                 
                 <label for="email">Adresse email :</label>
                 <span class="error">* <?php echo $emailErr; ?></span><br>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //Inscription
 
 $nameErr = $firstnameErr = $emailErr = $newpasswordErr = $birthdateErr = $weightErr = $heightErr = $genderErr = "";
@@ -187,6 +187,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($nameErr == "" && $firstnameErr == "" && $emailErr == "" && $newpasswordErr == "" && $birthdateErr == "" && $weightErr == "" && $heightErr == "" && $genderErr == "") {
 
         include('php/EntreeDonneBDD.php');
+
+        //$_SESSION['user_id'] = $user['ID']; mit de base dans la bddd
+        $_SESSION['user_name'] = $name;
+        //$_SESSION['user_type'] = $user['TYPE']; 0 de base donc ne change rien car de base est jsute client pas admin
+        $_SESSION['user_prenom'] = $firstname;
 
         header("Location: php/test.php");
 
