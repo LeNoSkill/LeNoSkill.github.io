@@ -204,6 +204,7 @@
   <script src="../js/afficherRecette.js"></script>
   <script src="../js/modifierRecette.js"></script>
   <script src="../js/ajouter.js"></script>
+  <script src="../js/updateImage.js"></script>
   <script>
 // Récupération des recettes et remplissage de la liste déroulante
 function loadRecipes() {
@@ -291,9 +292,9 @@ $("#searchBtn").on("click", function () {
     <label for="fibres_par_portion">Fibres par portion (en grammes) :</label>
     <input type="number" class="form-control" name="fibres_par_portion" value="${recipe.fibres_par_portion}" required />
   </div>
-  <div class="form-group">
-    <label for="image_url">URL de l'image :</label>
-    <input type="text" class="form-control" name="image_url" value="${recipe.image_url}" />
+  <label for="image_file">Fichier de l'image :</label>
+  <input type="file" class="form-control" name="image_file" id="image_file" onchange="updateImageURL();" />
+  <input type="hidden" name="image_url" id="image_url" value="../img/" />
   </div>
   <button type="submit" class="btn btn-success">Enregistrer les modifications </button>
   <button type="button" class="btn btn-danger" id="deleteBtn">Supprimer la recette</button>
