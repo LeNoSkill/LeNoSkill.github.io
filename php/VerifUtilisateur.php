@@ -22,6 +22,9 @@ try {
             // Connexion réussie, démarrez une session et redirigez l'utilisateur
             session_start();
             $_SESSION['user_id'] = $user['ID'];
+            $_SESSION['user_name'] = $user['NOM'];
+            $_SESSION['user_type'] = $user['TYPE'];
+            $_SESSION['user_prenom'] = $user['PRENOM'];
             header("Location: test.php");
         } else {
             // Mot de passe incorrect

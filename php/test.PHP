@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -24,14 +25,16 @@
               <a class="nav-link" href="#"><i class="fas fa-home"></i> Accueil</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-utensils"></i> Recettes
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#" id="afficherrecette">Afficher</a></li>
-                <li><a class="dropdown-item" href="#" id="ajouter">Ajouter</a></li>
-                <li><a class="dropdown-item" href="#" id="modif">Modifier/Supprimer</a></li>
-              </ul>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-utensils"></i> Recettes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#" id="afficherrecette">Afficher</a></li>
+                <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
+                 <li><a class="dropdown-item" href="#" id="ajouter">Ajouter</a></li>
+                  <li><a class="dropdown-item" href="#" id="modif">Modifier/Supprimer</a></li>
+                <?php endif; ?>
+               </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,8 +42,10 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Afficher</a></li>
-                <li><a class="dropdown-item" href="#">Ajouter</a></li>
-                <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
+                <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
+                  <li><a class="dropdown-item" href="#">Ajouter</a></li>
+                  <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
+                <?php endif; ?>
               </ul>
             </li>
             <li class="nav-item">
@@ -62,6 +67,8 @@
         </div>
       </div>
     </nav>
+
+
 
 
 <div id="main-content">
@@ -96,7 +103,11 @@
 
   <div class="container">
     <!-- Ajoutez ici le contenu de votre site internet -->
-      <p>Bienvenue sur SmartEats, votre source quotidienne de recettes équilibrées et saines !</p>
+      <p>Bienvenue sur SmartEats <?php
+    if (isset($_SESSION['user_prenom'])) {
+        echo  " ".$_SESSION['user_prenom']." ";
+    }
+    ?>, votre source quotidienne de recettes équilibrées et saines !</p>
 
       <p>Notre objectif est de vous aider à maintenir un mode de vie sain en vous proposant chaque jour de nouvelles recettes délicieuses et faciles à préparer. Nous savons que manger sainement peut parfois sembler difficile, c'est pourquoi nous avons créé SmartEats pour vous simplifier la vie.</p>
 
