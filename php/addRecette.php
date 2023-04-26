@@ -32,8 +32,8 @@ if (isset($_POST['name']) && isset($_POST['temps_preparation']) && isset($_POST[
     $image_url = $_POST['image_url'] ?? '';
 
     // Préparer la requête pour mettre à jour la recette
-    $stmt = $pdo->prepare("INSERT INTO `recettes` (`nom_recette`, `temps_preparation`, `temps_cuisson`, `instructions_preparation`, `liste_ingredients`, `calories_par_portion`, `proteines_par_portion`, `glucides_par_portion`, `graisses_par_portion`, `fibres_par_portion`, `image_url`) VALUES
-    (nom_recette = ?, temps_preparation = ?, temps_cuisson = ?, instructions_preparation = ?, liste_ingredients = ?, calories_par_portion = ?, proteines_par_portion = ?, glucides_par_portion = ?, graisses_par_portion = ?, fibres_par_portion = ?, image_url = ?");
+    $stmt = $pdo->prepare("INSERT INTO `recettes` (`nom_recette`, `temps_preparation`, `temps_cuisson`, `instructions_preparation`, `liste_ingredients`, `calories_par_portion`, `proteines_par_portion`, `glucides_par_portion`, `graisses_par_portion`, `fibres_par_portion`, `image_url`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
 
     // Exécuter la requête avec les données du formulaire
     if ($stmt->execute([$name, $temps_preparation, $temps_cuisson, $instructions_preparation, $liste_ingredients, $calories_par_portion, $proteines_par_portion, $glucides_par_portion, $graisses_par_portion, $fibres_par_portion, $image_url])) {
