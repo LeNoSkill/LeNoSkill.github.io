@@ -1,5 +1,7 @@
-const btnAjouter = document.getElementById("ajouter");
-
-btnAjouter.addEventListener("click", function () {
-  alert("QUENTIN FTG GROSSE PUTE");
+$(document).ready(function () {
+  $("#idformajt").hide();
+  $("#ajouter").click(function() {
+  $("#apropos,#recetteCards,#main-content,#apropos,#footer,#recherche").hide();
+  $("#idformajt").show();
+});
 });

@@ -148,6 +148,60 @@
 </div>
 </div>
 
+<div class="container" id="idformajt">
+<h3>Ajouter la recette </h3>
+<form id="addform">
+  <input type="hidden" name="id"  />
+  <div class="form-group">
+    <label for="name">Nom de la recette :</label>
+    <input type="text" class="form-control" name="name"  required />
+  </div>
+  <div class="form-group">
+    <label for="temps_preparation">Temps de préparation (en minutes) :</label>
+    <input type="number" class="form-control" name="temps_preparation"  required />
+  </div>
+  <div class="form-group">
+    <label for="temps_cuisson">Temps de cuisson (en minutes) :</label>
+    <input type="number" class="form-control" name="temps_cuisson"  required />
+  </div>
+  <div class="form-group">
+    <label for="instructions_preparation">Instructions de préparation :</label>
+    <textarea class="form-control" name="instructions_preparation" rows="5" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="liste_ingredients">Liste des ingrédients :</label>
+    <textarea class="form-control" name="liste_ingredients" rows="5" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="calories_par_portion">Calories par portion :</label>
+    <input type="number" class="form-control" name="calories_par_portion" required />
+  </div>
+  <div class="form-group">
+    <label for="proteines_par_portion">Protéines par portion (en grammes) :</label>
+    <input type="number" class="form-control" name="proteines_par_portion" required />
+  </div>
+  <div class="form-group">
+    <label for="glucides_par_portion">Glucides par portion (en grammes) :</label>
+    <input type="number" class="form-control" name="glucides_par_portion" required />
+  </div>
+  <div class="form-group">
+    <label for="graisses_par_portion">Graisses par portion (en grammes) :</label>
+    <input type="number" class="form-control" name="graisses_par_portion" required />
+  </div>
+  <div class="form-group">
+    <label for="fibres_par_portion">Fibres par portion (en grammes) :</label>
+    <input type="number" class="form-control" name="fibres_par_portion" required />
+  </div>
+  <label for="image_file">Fichier de l'image :</label>
+  <input type="file" class="form-control" name="image_file" id="image_file" onchange="updateImageURL();" />
+  <input type="hidden" name="image_url" id="image_url" />
+  <button type="button" class="btn btn-success" id="addBtn">ajouter la recette</button>
+  </div>
+</form>
+
+
+</div>
+
 <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
                  
   <div class="container" id="recherche">
