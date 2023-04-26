@@ -150,7 +150,7 @@
 
 <div class="container" id="idformajt">
 <h3>Ajouter la recette </h3>
-<form id="addform">
+<form id="addform" action="addRecette.php" method="post">
   <input type="hidden" name="id"  />
   <div class="form-group">
     <label for="name">Nom de la recette :</label>
@@ -195,7 +195,7 @@
   <label for="image_file">Fichier de l'image :</label>
   <input type="file" class="form-control" name="image_file" id="image_file" onchange="updateImageURL();" />
   <input type="hidden" name="image_url" id="image_url" />
-  <button type="button" class="btn btn-success" id="addBtn">ajouter la recette</button>
+  <button type="submit" class="btn btn-success" id="addBtn">ajouter la recette</button>
   </div>
 </form>
 
@@ -391,6 +391,8 @@ $("#searchBtn").on("click", function () {
         });
       });
 
+    
+
       // Événement pour supprimer la recette
       $("#deleteBtn").on("click", function () {
         if (confirm("Êtes-vous sûr de vouloir supprimer cette recette ?")) {
@@ -418,7 +420,26 @@ $("#searchBtn").on("click", function () {
 
 
   </script>
+<script>
+     $("#addform").on("submit", function (event) {
+        event.preventDefault();
 
+        $.ajax({
+          url: "addRecette.php",
+          type: "POST",
+          data: $(this).serialize(),
+          success: function (response) {
+            alert(response);
+            location.reload();
+          },
+          error: function (error) {
+            alert("Erreur lors de la mise à jour de la recette");
+            console.error(error);
+          },
+        });
+      });
+
+</script>
 
 
   
