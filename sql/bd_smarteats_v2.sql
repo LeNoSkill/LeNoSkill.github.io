@@ -136,7 +136,7 @@ INSERT INTO `recettes` (`ID`, `nom_recette`, `temps_preparation`, `temps_cuisson
 --
 
 CREATE TABLE `utilisateurs` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL ,
   `TYPE` int(11) NOT NULL,
   `MAIL` varchar(100) NOT NULL,
   `PASSWORD` varchar(200) NOT NULL,
@@ -152,11 +152,11 @@ CREATE TABLE `utilisateurs` (
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`ID`, `TYPE`, `MAIL`, `PASSWORD`, `NOM`, `PRENOM`, `DATENAISSANCE`, `POIDS`, `TAILLE_CM`, `SEXE`) VALUES
-(1, 0, 'louis.criquillion@gmail.com', '$2y$10$McWm13yhvFLOkbvRcKkniOjPjmTVu8jKQjgpnlZnvtzl/0hX0aWIe', 'Criquillion', 'Louis', '2002-10-18', 69.0, 169.0, 'H'),
-(2, 0, 'odoakd@gmail.com', '$2y$10$QOWJFPOO.N3zUQ7RzX6oCet35vaapkhmEfTjvEmX3A817G.u/3DJy', 'Criquillion', 'Louis', '1993-02-26', 123.0, 123.0, 'H'),
-(3, 0, 'manon240204@gmail.com', '$2y$10$cz/JZ5cZMITkDYShg5fF.eLjBcMjAbRBe3WoZ/kINoOBbEyzE.03C', 'de Heinzelin', 'Manon', '2004-02-24', 55.0, 167.0, 'F'),
-(4, 0, 'jules.criquillion@gmail.com', '$2y$10$f762whkx2RTgFZ4A/nSwoeX1.VjyNlg2bFoa5VfrObKqNXRtximJe', 'Criquillion ', 'Jules', '2007-09-25', 70.0, 172.0, 'H'),
+INSERT INTO `utilisateurs` (`ID`,`TYPE`, `MAIL`, `PASSWORD`, `NOM`, `PRENOM`, `DATENAISSANCE`, `POIDS`, `TAILLE_CM`, `SEXE`) VALUES
+(1,1, 'louis.criquillion@gmail.com', '$2y$10$McWm13yhvFLOkbvRcKkniOjPjmTVu8jKQjgpnlZnvtzl/0hX0aWIe', 'Criquillion', 'Louis', '2002-10-18', 69.0, 169.0, 'H'),
+(2,0, 'odoakd@gmail.com', '$2y$10$QOWJFPOO.N3zUQ7RzX6oCet35vaapkhmEfTjvEmX3A817G.u/3DJy', 'Criquillion', 'Louis', '1993-02-26', 123.0, 123.0, 'H'),
+(3,0, 'manon240204@gmail.com', '$2y$10$cz/JZ5cZMITkDYShg5fF.eLjBcMjAbRBe3WoZ/kINoOBbEyzE.03C', 'de Heinzelin', 'Manon', '2004-02-24', 55.0, 167.0, 'F'),
+(4,0, 'jules.criquillion@gmail.com', '$2y$10$f762whkx2RTgFZ4A/nSwoeX1.VjyNlg2bFoa5VfrObKqNXRtximJe', 'Criquillion ', 'Jules', '2007-09-25', 70.0, 172.0, 'H');
 
 --
 -- Index pour les tables déchargées
@@ -203,7 +203,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `exercice`
 --
 ALTER TABLE `exercice`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `favoris`
@@ -221,13 +221,13 @@ ALTER TABLE `info_nutri`
 -- AUTO_INCREMENT pour la table `recettes`
 --
 ALTER TABLE `recettes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées

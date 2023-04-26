@@ -148,23 +148,25 @@
 </div>
 </div>
 
-<div class="container" id="recherche">
-  <div class="row">
-    <div class="col-md-8">
-      <!--<input type="text" id="searchRecipe" class="form-control" placeholder="Recherchez une recette par nom">-->
-      <select id="recipeSelect" class="form-control">
-        <!-- Les options seront générées dynamiquement ici -->
-      </select>
+<?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
+                 
+  <div class="container" id="recherche">
+    <div class="row">
+      <div class="col-md-8">
+        <!--<input type="text" id="searchRecipe" class="form-control" placeholder="Recherchez une recette par nom">-->
+        <select id="recipeSelect" class="form-control">
+          <!-- Les options seront générées dynamiquement ici -->
+        </select>
+      </div>
+      <div class="col-md-4">
+        <button id="searchBtn" class="btn btn-primary">Chercher</button>
+      </div>
     </div>
-    <div class="col-md-4">
-      <button id="searchBtn" class="btn btn-primary">Chercher</button>
+    <div id="editFormContainer" style="display:none;">
+      <!-- Le formulaire de modification sera généré ici -->
     </div>
   </div>
-  <div id="editFormContainer" style="display:none;">
-    <!-- Le formulaire de modification sera généré ici -->
-  </div>
-</div>
-
+<?php endif; ?>
 
 
 
