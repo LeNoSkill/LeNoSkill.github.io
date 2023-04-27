@@ -268,7 +268,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../js/logout.js"></script>
-  <script src="../js/afficherRecette.js"></script>
+  <script src="../js/afficherRecetteFav.js"></script>
   <script src="../js/modifierRecette.js"></script>
   <script src="../js/ajouter.js"></script>
   <script src="../js/updateImage.js"></script>
