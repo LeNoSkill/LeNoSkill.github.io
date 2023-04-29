@@ -29,7 +29,19 @@ $("#afficherrecette").click(function () {
           $('<p>').text('Temps de préparation : ' + obj.temps_preparation).appendTo(cardBody);
           $('<p>').text('Temps de cuisson : ' + obj.temps_cuisson).appendTo(cardBody);
            // Ajout de la checkbox
-           var fav = $('<input>').attr('type', 'checkbox').attr('id', 'favoriRecette').val(obj.id).appendTo(cardBody);
+           var fav = $('<input>').attr('type', 'checkbox').attr('id', 'favoriRecette-'+obj.id).val(obj.id).appendTo(cardBody);
+           // appelle une fonction ajouterousupprimerfavori pour rajouter au fichier php
+           /*
+           $('#favoriRecette-' + obj.id).change(function() {
+            var id_recette = $(this).val();
+            if ($(this).is(':checked')) {
+                ajouterousupprimerfavori(id_recette, 'ajouter');
+            } else {
+                ajouterousupprimerfavori(id_recette, 'supprimer');
+            }
+          });*/
+
+
            //var checkbox = $('<input>').attr('type', 'checkbox').attr('id', 'favoriRecette').attr('value', obj.id).appendTo(cardBody);
            $('<label>').text('Ajouter aux favoris').appendTo(cardBody);
 
@@ -50,6 +62,8 @@ $("#afficherrecette").click(function () {
           $('<small>').html(' <i class="fas fa-tint"></i> Graisses : ' + obj.graisses_par_portion).appendTo(cardFooter);
           $('<br>').appendTo(cardFooter);
           $('<small>').html(' <i class="fa-brands fa-pagelines"></i> Fibres : ' + obj.fibres_par_portion).appendTo(cardFooter);
+
+          
         }
       }
     })
