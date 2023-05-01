@@ -1,4 +1,4 @@
-/*$(document).ready(function () {
+$(document).ready(function () {
     let i = 0 ;
 // Affiche les recettes et cache le reste
 $("#afficherrecette").click(function() {
@@ -56,4 +56,4 @@ $("#afficherrecette").click(function () {
 });
 
 });
-*/
+
