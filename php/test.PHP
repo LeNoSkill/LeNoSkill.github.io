@@ -360,9 +360,8 @@ $("#searchBtn").on("click", function () {
     <input type="number" class="form-control" name="fibres_par_portion" value="${recipe.fibres_par_portion}" required />
   </div>
   <label for="image_file">Fichier de l'image :</label>
-  
-  <input type="file" class="form-control" name="image_file" id="image_file" onchange="updateImageURL();" />
-  <input type="text" name="image_url" id="image_url" value="${recipe.image_url}" />
+  <input type="file" class="form-control" name="image_file2" id="image_file2" onchange="updateImageURL2();" />
+  <input type="text" name="image_url2" id="image_url2" value="${recipe.image_url}" />
   
   </div>
   <button type="submit" class="btn btn-success">Enregistrer les modifications </button>
@@ -452,6 +451,20 @@ $("#searchBtn").on("click", function () {
 
   if (fileInput.files && fileInput.files[0]) {
     alert('passage boucle');
+    const fileName = fileInput.files[0].name;
+    imageUrlInput.value = `../img/${fileName}`;
+  }
+}
+</script>
+<script>
+  function updateImageURL2() {
+
+  alert('passage fonction2');  
+  const fileInput = document.getElementById('image_file2');
+  const imageUrlInput = document.getElementById('image_url2');
+
+  if (fileInput.files && fileInput.files[0]) {
+    alert('passage boucle2');
     const fileName = fileInput.files[0].name;
     imageUrlInput.value = `../img/${fileName}`;
   }

@@ -29,7 +29,7 @@ if (isset($_POST['id']) && isset($_POST['name']) && isset($_POST['temps_preparat
     $glucides_par_portion = $_POST['glucides_par_portion'];
     $graisses_par_portion = $_POST['graisses_par_portion'];
     $fibres_par_portion = $_POST['fibres_par_portion'];
-    $image_url = $_POST['image_url'] ?? '';
+    $image_url = $_POST['image_url2'] ?? '';
 
     // Préparer la requête pour mettre à jour la recette
     $stmt = $pdo->prepare("UPDATE recettes SET nom_recette = ?, temps_preparation = ?, temps_cuisson = ?, instructions_preparation = ?, liste_ingredients = ?, calories_par_portion = ?, proteines_par_portion = ?, glucides_par_portion = ?, graisses_par_portion = ?, fibres_par_portion = ?, image_url = ? WHERE ID = ?");
