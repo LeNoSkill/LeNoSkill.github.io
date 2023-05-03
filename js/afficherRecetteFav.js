@@ -29,21 +29,13 @@ $("#afficherrecette").click(function () {
           $('<p>').text('Temps de préparation : ' + obj.temps_preparation).appendTo(cardBody);
           $('<p>').text('Temps de cuisson : ' + obj.temps_cuisson).appendTo(cardBody);
            // Ajout de la checkbox
-           var fav = $('<input>').attr('type', 'checkbox').attr('id', 'favoriRecette-'+obj.id).val(obj.id).appendTo(cardBody);
-           // appelle une fonction ajouterousupprimerfavori pour rajouter au fichier php
-           /*
-           $('#favoriRecette-' + obj.id).change(function() {
-            var id_recette = $(this).val();
-            if ($(this).is(':checked')) {
-                ajouterousupprimerfavori(id_recette, 'ajouter');
-            } else {
-                ajouterousupprimerfavori(id_recette, 'supprimer');
-            }
-          });*/
+          
+          $('<a>').attr('href','../php/addFavori.php?id=' + obj.ID).text('Favori').appendTo(cardBody);
+          $('<br>').appendTo(cardBody);
 
 
-           //var checkbox = $('<input>').attr('type', 'checkbox').attr('id', 'favoriRecette').attr('value', obj.id).appendTo(cardBody);
-           $('<label>').text('Ajouter aux favoris').appendTo(cardBody);
+          
+          // $('<label>').text('Ajouter aux favoris').appendTo(cardBody);
 
           var uniqueId = obj.nom_recette.replace(/\s+/g, ''); // remove spaces to create a unique ID
           var collapseButton = $('<button>').addClass('btn btn-primary').attr('type', 'button').attr('data-bs-toggle', 'collapse').attr('data-bs-target', '#collapse' + uniqueId).text('Voir les ingrédients et instructions').appendTo(cardBody);
