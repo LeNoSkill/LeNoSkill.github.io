@@ -188,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         include('php/EntreeDonneBDD.php');
 
-        //$_SESSION['user_id'] = $user['ID']; mit de base dans la bddd
+        $_SESSION['user_id'] = $user['ID']; 
         $_SESSION['user_name'] = $name;
         $_SESSION['user_type'] = 0; //0 de base donc ne change rien car de base est jsute client pas admin
         $_SESSION['user_prenom'] = $firstname;
