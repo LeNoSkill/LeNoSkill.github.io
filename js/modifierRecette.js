@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#recherche").hide();
     $("#modif").click(function() {
-    $("#apropos,#recetteCards,#main-content,#apropos,#footer,#idformajt").hide();
+    $("#apropos,#recetteCards,#main-content,#apropos,#footer,#idformajt,#utilisateursTable").hide();
     $("#recherche").show();
   });
 });
@@ -91,7 +91,7 @@ $("#searchBtn").on("click", function () {
   </div>
   <label for="image_file">Fichier de l'image :</label>
   <input type="file" class="form-control" name="image_file2" id="image_file2" onchange="updateImageURL2();" />
-  <input type="text" name="image_url2" id="image_url2" value="${recipe.image_url}" />
+  <input type="hidden" name="image_url2" id="image_url2" value="${recipe.image_url}" />
   
   </div>
   <button type="submit" class="btn btn-success">Enregistrer les modifications </button>

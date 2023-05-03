@@ -10,7 +10,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="../css/pageprincipale.css">
   <style>
-  </style>
+        /* Fond du tableau */
+        #utilisateursTable {
+      background-color: #f8f9fa;
+    }
+  
+    /* En-tête du tableau */
+    #utilisateursTable thead {
+      background-color: #6c757d;
+      color: white;
+    }
+  
+    /* Lignes du tableau */
+    #utilisateursTable tbody tr {
+      color: #333;
+    }
+  
+    /* Lignes du tableau au survol */
+    #utilisateursTable tbody tr:hover {
+      background-color: #e9ecef;
+      cursor: pointer;
+    }
+
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -48,6 +70,11 @@
                 <?php endif; ?>
               </ul>
             </li>
+            <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="afficherutilisateurs"><i class="fas fa-users"></i> Gestion des utilisateurs</a>
+            </li>
+            <?php endif; ?>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fas fa-barcode"></i> Scanner</a>
             </li>
@@ -228,6 +255,27 @@
   <div id="recetteCards" class="row row-cols-1 row-cols-md-4 g-4">
   </div>
 
+  <div class="table-responsive" id="utilisateursTable" style="display:none">
+  <table class="table table-hover">
+    <thead class="thead-dark"><br>
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Date de naissance</th>
+        <th>Poids</th>
+        <th>Taille</th>
+        <th>Sexe</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+
   <footer style="background-color: #000; color: #fff; padding: 20px;" id="footer">
   <div class="container">
     <div class="row">
@@ -272,5 +320,6 @@
   <script src="../js/modifierRecette.js"></script>
   <script src="../js/ajouter.js"></script>
   <script src="../js/updateImage.js"></script>  
+  <script src="../js/gestionUtilisateurs.js"></script>  
 </body>
 </html>

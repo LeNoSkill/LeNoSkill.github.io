@@ -2,15 +2,15 @@ $(document).ready(function () {
     let i = 0 ;
 // Affiche les recettes et cache le reste
 $("#afficherrecette").click(function() {
-$("#main-content,#apropos,#recherche,#idformajt").hide();
-$("#recetteCards").show();
+$("#main-content,#apropos,#recherche,#idformajt,#utilisateursTable").hide();
+$("#recetteCards,#footer").show();
 });
 
 // Gère le clic sur "Accueil"
 $(".nav-link[href='#']").click(function (event) {
 event.preventDefault(); // Empêche le comportement par défaut du lien
 if ($(this).text().trim() === "Accueil") {
-  $("#recetteCards,#recherche,#idformajt").hide();
+  $("#recetteCards,#recherche,#idformajt,#utilisateursTable").hide();
   $("#main-content, #apropos,#footer").show(); // Afficher ces éléments
 }
 });

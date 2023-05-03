@@ -93,7 +93,7 @@
                 <input type="email" id="email" name="email" placeholder="exemple@gmail.com" pattern="[A-Za-z0-9._%+-]{0,50}@[A-Za-z0-9.-]{0,20}\.[A-Za-z]{0,10}" 
                 title="Le mail doit contenir @ et le . à la fin de celui ci comme dans l'exemple exemple@gmail.com" required>
                 
-                <label for="newpassword">Mot de passe :</label>
+                <label for="newpassword">Mot de passe (min 8 caractères) :</label>
                 <span class="error">* <?php echo $newpasswordErr; ?></span><br>
                 <input type="password" id="newpassword" name="newpassword" pattern=".{8,}" title="Le mot de passe doit contenir au minimum 8 caractères" required>
                 
