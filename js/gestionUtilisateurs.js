@@ -13,6 +13,7 @@ $(document).ready(function () {
         if (i < data.length) {
           for (var obj of data) {
             i = data.length;
+            var checkedStatus = (obj.TYPE == 1) ? 'checked' : '';
             var row = $(
               `<tr>
                   <td>${obj.ID}</td>
@@ -25,26 +26,12 @@ $(document).ready(function () {
                   <td>${obj.TAILLE_CM}</td>
                   <td>${obj.SEXE}</td>
                   <td>
-                    <button class="btn btn-sm btn-primary modify-btn">Modifier</button>
+                    <input type="checkbox" class="type-checkbox" ${checkedStatus}>
                     <button class="btn btn-sm btn-danger">Supprimer</button>
                   </td>
                 </tr>`
             );
             $("#utilisateursTable tbody").append(row);
-
-            // Gestion de l'événement click pour le bouton "Modifier"
-            row.find(".modify-btn").click(function () {
-              var cells = $(this).closest("tr").children("td");
-              cells.each(function () {
-                if ($(this).index() !== 0 && $(this).index() !== cells.length - 1) {
-                  var input = $('<input>').val($(this).text());
-                  $(this).html(input);
-                }
-              });
-
-              // Remplace le bouton "Modifier" par un bouton "Enregistrer"
-              $(this).replaceWith('<button class="btn btn-sm btn-success save-btn">Enregistrer</button>');
-            });
           }
         }
       })
@@ -54,41 +41,34 @@ $(document).ready(function () {
       });
   });
 
-  // Gestion de l'événement click pour le bouton "Enregistrer"
-  $("#utilisateursTable").on('click', '.save-btn', function () {
+  // Gestion de l'événement click pour la case à cocher "Type"
+  $("#utilisateursTable").on('click', '.type-checkbox', function () {
     var row = $(this).closest("tr");
-    var cells = row.children("td");
-    
-    // Extraire les données modifiées à partir des champs d'entrée
-    var updatedData = {};
-    cells.each(function () {
-      if ($(this).index() !== 0 && $(this).index() !== cells.length - 1) {
-        var columnName = $("#utilisateursTable thead th").eq($(this).index()).text();
-        updatedData[columnName] = $(this).find("input").val();
-        $(this).text($(this).find("input").val());
-      }
-    });
-  
-    // Ajouter l'ID de l'utilisateur aux données envoyées
-    updatedData['ID'] = row.find("td:first").text();
-  
+    var id = row.find("td:first").text();
+    var newType = this.checked ? 1 : 0;
+
     // Envoyer les données modifiées au serveur
     $.ajax({
       url: 'updateUtilisateurs.php',
       type: 'POST',
-      data: updatedData,
+      dataType: 'json',
+      contentType: 'application/json',
+      data: JSON.stringify({ ID: id, TYPE: newType }),
       success: function (response) {
-        // Traiter la réponse du serveur (par exemple, afficher un message de succès)
-        alert('Utilisateur mis à jour avec succès');
+        if (response.status === "success") {
+          alert('Utilisateur mis à jour avec succès');
+        } else {
+          alert('Erreur lors de la mise à jour de l’utilisateur');
+        }
       },
       error: function (error) {
         // Gérer les erreurs éventuelles
         alert('Erreur lors de la mise à jour de l’utilisateur : ' + error.responseText);
       }
     });
-  
-    // Remplace le bouton "Enregistrer" par un bouton "Modifier"
-    $(this).replaceWith('<button class="btn btn-sm btn-primary modify-btn">Modifier</button>');
+
+    // Mettre à jour le type dans la table
+    row.find("td:nth-child(2)").text(newType);
   });
 
-});  
+});

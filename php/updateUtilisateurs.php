@@ -14,24 +14,18 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-// Vérifier si toutes les données requises sont présentes dans $_POST
-if (isset($_POST['ID']) && isset($_POST['TYPE']) && isset($_POST['NOM']) && isset($_POST['PRENOM']) && isset($_POST['MAIL']) && isset($_POST['DATENAISSANCE']) && isset($_POST['POIDS']) && isset($_POST['TAILLE_CM']) && isset($_POST['SEXE'])) {
-    // Récupérer les données du formulaire
-    $id = $_POST['ID'];
-    $type = $_POST['TYPE'];
-    $nom = $_POST['NOM'];
-    $prenom = $_POST['PRENOM'];
-    $mail = $_POST['MAIL'];
-    $datenaissance = $_POST['DATENAISSANCE'];
-    $poids = $_POST['POIDS'];
-    $taille_cm = $_POST['TAILLE_CM'];
-    $sexe = $_POST['SEXE'];
+// Vérifier si les données requises sont présentes
+$input = json_decode(file_get_contents("php://input"), true);
+if (isset($input['ID']) && isset($input['TYPE'])) {
+    // Récupérer les données
+    $id = $input['ID'];
+    $type = $input['TYPE'];
 
     // Préparer la requête pour mettre à jour l'utilisateur
-    $stmt = $pdo->prepare("UPDATE utilisateurs SET TYPE = ?, NOM = ?, PRENOM = ?, MAIL = ?, DATENAISSANCE = ?, POIDS = ?, TAILLE_CM = ?, SEXE = ? WHERE ID = ?");
+    $stmt = $pdo->prepare("UPDATE utilisateurs SET TYPE = ? WHERE ID = ?");
 
-    // Exécuter la requête avec les données du formulaire
-    if ($stmt->execute([$type, $nom, $prenom, $mail, $datenaissance, $poids, $taille_cm, $sexe, $id])) {
+    // Exécuter la requête avec les données
+    if ($stmt->execute([$type, $id])) {
         // Si la requête s'exécute avec succès, renvoyer un statut JSON "success"
         echo json_encode(["status" => "success"]);
     } else {

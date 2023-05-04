@@ -31,7 +31,43 @@
       background-color: #e9ecef;
       cursor: pointer;
     }
+/* Style de base */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+/* Style de coche */
+input[type="checkbox"]:checked::before {
+  content: "\2713";
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+/* Style au survol */
+input[type="checkbox"]:hover {
+  border-color: #007bff;
+}
+
+/* Style au focus */
+input[type="checkbox"]:focus {
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
 </style>
 </head>
 <body>
@@ -268,7 +304,7 @@
         <th>Poids</th>
         <th>Taille</th>
         <th>Sexe</th>
-        <th>Actions</th>
+        <th>Admin/Supprimer</th>
       </tr>
     </thead>
     <tbody>
