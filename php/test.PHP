@@ -114,8 +114,13 @@ input[type="checkbox"]:focus {
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fas fa-barcode"></i> Scanner</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-heart"></i> Favoris</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-heart"></i> Favoris</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#" id="afficherFavorisRec">Recettes</a></li>
+                  <li><a class="dropdown-item" href="#" id="afficherFavorisExe">Exercices</a></li>
+                </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#apropos"><i class="fas fa-info-circle"></i> À propos</a>
@@ -203,7 +208,7 @@ input[type="checkbox"]:focus {
       <img src="../img/Mateo.jpg" alt="Créateur 3">
       <h3>Matéo Fontaine</h3>
       <p>
-        Na rien coder de ce site internet juste le remplissage de la base de données qu'il avait mal construite.
+       Beau frère de Louis (a baisé sa soeur)
       </p>
     </div>
   </div>
@@ -291,6 +296,9 @@ input[type="checkbox"]:focus {
   <div id="recetteCards" class="row row-cols-1 row-cols-md-4 g-4">
   </div>
 
+  <div id="recetteCardsFav" class="row row-cols-1 row-cols-md-4 g-4">
+  </div>
+
   <div class="table-responsive" id="utilisateursTable" style="display:none">
   <table class="table table-hover">
     <thead class="thead-dark"><br>
@@ -357,5 +365,6 @@ input[type="checkbox"]:focus {
   <script src="../js/ajouter.js"></script>
   <script src="../js/updateImage.js"></script>  
   <script src="../js/gestionUtilisateurs.js"></script>  
+  <script src="../js/afficherFavorisR.js"></script>
 </body>
 </html>

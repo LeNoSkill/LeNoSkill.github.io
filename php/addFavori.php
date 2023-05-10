@@ -26,7 +26,7 @@ if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
     if($check_fav->rowCount()==1){
         
         $ins = $pdo->prepare('DELETE FROM favoris WHERE ID_recette = ? AND ID_utilisateur = ?');
-        $ins->execute(array($sessionid, $getid));
+        $ins->execute(array($getid, $sessionid));
         //echo((int)$_GET['id']." reussite");
         
     }

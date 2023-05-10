@@ -1,16 +1,16 @@
 $(document).ready(function () {
     let i = 0 ;
 // Affiche les recettes et cache le reste
-$("#afficherrecette").click(function() {
-$("#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCardsFav").hide();
-$("#recetteCards,#footer").show();
+$("#afficherFavorisRec").click(function() {
+$("#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCards").hide();
+$("#recetteCardsFav,#footer").show();
 });
 
 // Gère le clic sur "Accueil"
 $(".nav-link[href='#']").click(function (event) {
 event.preventDefault(); // Empêche le comportement par défaut du lien
 if ($(this).text().trim() === "Accueil") {
-  $("#recetteCards,#recherche,#idformajt,#utilisateursTable").hide();
+  $("#recetteCardsFav,#recherche,#idformajt,#utilisateursTable").hide();
   $("#main-content, #apropos,#footer").show(); // Afficher ces éléments
 }
 //$("#fav").click(function() {$.get("addFavori.php", $(this).attr('data-id').value)});
@@ -19,13 +19,13 @@ if ($(this).text().trim() === "Accueil") {
 
 });
 
-$("#afficherrecette").click(function () {
-  $.get("recetteTest.php", function () { }, "json")
+$("#afficherFavorisRec").click(function () {
+  $.get("afficherFavRecette.php", function () { }, "json")
     .done(function (data) {
       if (i < data.length) {
         for (var obj of data) {
           i = data.length;
-          var card = $('<div>').addClass('col').appendTo('#recetteCards');
+          var card = $('<div>').addClass('col').appendTo('#recetteCardsFav');
           var cardInner = $('<div>').addClass('card h-100').appendTo(card);
           $('<img>').attr('src', obj.image_url).addClass('card-img-top').css('max-height', '200px').appendTo(cardInner);
           var cardBody = $('<div>').addClass('card-body').appendTo(cardInner);
@@ -35,7 +35,7 @@ $("#afficherrecette").click(function () {
            // Ajout de la checkbox
           
           //$('<a>').attr('href','../php/addFavori.php?id=' + obj.ID).text('Favori').appendTo(cardBody);
-          $('<span class="fav">').attr('data-id', obj.ID).text('Favori').appendTo(cardBody);
+          $('<span class="fav2">').attr('data-id', obj.ID).text('Favori').appendTo(cardBody);
           $('<br>').appendTo(cardBody);
 
 
@@ -63,7 +63,7 @@ $("#afficherrecette").click(function () {
         
         }
 
-        $(".fav").on("click", function () {
+        $(".fav2").on("click", function () {
           var idRecette = "id="+ $(this).attr('data-id')
         
           console.log(idRecette);
