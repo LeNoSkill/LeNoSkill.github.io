@@ -35,9 +35,9 @@ $("#afficherrecette").click(function () {
            // Ajout de la checkbox
           
           //$('<a>').attr('href','../php/addFavori.php?id=' + obj.ID).text('Favori').appendTo(cardBody);
-          $('<span class="fav">').attr('data-id', obj.ID).text('Favori').appendTo(cardBody);
+          $('<span class="fav">').attr('data-id', obj.ID).html('<i class="fa fa-heart"></i>').appendTo(cardBody);
           $('<br>').appendTo(cardBody);
-
+          $('<br>').appendTo(cardBody);
 
           
           // $('<label>').text('Ajouter aux favoris').appendTo(cardBody);
