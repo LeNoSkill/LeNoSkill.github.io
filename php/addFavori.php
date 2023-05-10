@@ -20,9 +20,25 @@ if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
     $getid=(int)$_GET['id'];
     $sessionid = $_SESSION['user_id'] ;
 
-    
+    $check_fav= $pdo->prepare('SELECT id FROM favoris WHERE ID_recette = ? AND ID_utilisateur = ?');
+    $check_fav->execute(array($getid,$sessionid));
+
+    if($check_fav->rowCount()==1){
+        
+        $ins = $pdo->prepare('DELETE FROM favoris WHERE ID_recette = ? AND ID_utilisateur = ?');
+        $ins->execute(array($sessionid, $getid));
+        //echo((int)$_GET['id']." reussite");
+        
+    }
+    else{
+        $ins = $pdo->prepare('INSERT into favoris (ID_utilisateur, ID_recette) VALUES (?,?)');
+        $ins->execute(array($sessionid, $getid));
+    }
+
+/*    
     $check = $pdo->prepare('SELECT id from recettes WHERE ID = ? ');
     $check->execute(array($getid));
+
 
     if($check->rowCount()==1){
         
@@ -34,7 +50,7 @@ if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
     else{
         echo('erreur');
         echo((int)$_GET['id']);
-    }
+    }*/
 }
 else{
     echo('erreur');

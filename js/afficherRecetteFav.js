@@ -75,7 +75,7 @@ $("#afficherrecette").click(function () {
             data: idRecette,
             async: false,
             success: function (response) {
-              alert(response);
+              alert("réussi"+ response);
             },
             error: function (error) {
               // Gérer les erreurs éventuelles
