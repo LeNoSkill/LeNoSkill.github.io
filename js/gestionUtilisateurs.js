@@ -71,4 +71,31 @@ $(document).ready(function () {
     row.find("td:nth-child(2)").text(newType);
   });
 
+  //Supprimer les utilisateurs
+  $("#utilisateursTable").on("click", ".btn-danger", function () {
+    var row = $(this).closest("tr");
+    var id = row.find("td:first").text();
+  
+    $.ajax({
+      url: "deleteUtilisateur.php",
+      type: "POST",
+      dataType: "json",
+      contentType: "application/json",
+      data: JSON.stringify({ ID: id }),
+      success: function (response) {
+        if (response.status === "success") {
+          alert("Utilisateur supprimé avec succès");
+          // Supprimez la ligne de la table
+          row.remove();
+        } else {
+          alert("Erreur lors de la suppression de l'utilisateur");
+        }
+      },
+      error: function (error) {
+        // Gérer les erreurs éventuelles
+        alert("Erreur lors de la suppression de l'utilisateur : " + error.responseText);
+      }
+    });
+  });
+  
 });
