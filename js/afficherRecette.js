@@ -3,7 +3,7 @@ $(document).ready(function () {
   // Affiche les recettes et cache le reste
   $("#afficherrecette").click(function () {
     $(
-      "#main-content,#apropos,#recherche,#idformajt,#exerciceCards",
+      "#main-content,#apropos,#recherche,#idformajt,#exerciceCards,#idAjtExo",
       "#utilisateursTable"
     ).hide();
     $("#recetteCards").show();
@@ -13,7 +13,9 @@ $(document).ready(function () {
   $(".nav-link[href='#']").click(function (event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
     if ($(this).text().trim() === "Accueil") {
-      $("#recetteCards,#recherche,#idformajt,#utilisateursTable").hide();
+      $(
+        "#recetteCards,#recherche,#idformajt,#utilisateursTable,#idAjtExo,#exerciceCards"
+      ).hide();
       $("#main-content, #apropos,#footer").show(); // Afficher ces éléments
     }
   });

@@ -1,18 +1,18 @@
 $(document).ready(function () {
-  $("#idformajt").hide();
-  $("#ajouter").click(function () {
+  $("#idAjtExo").hide();
+  $("#ajouterExercice").click(function () {
     $(
-      "#apropos,#recetteCards,#main-content,#apropos,#footer,#recherche,#utilisateursTable,#exerciceCards,#idAjtExo"
+      "#apropos,#recetteCards,#main-content,#apropos,#footer,#recherche,#utilisateursTable,#exerciceCards"
     ).hide();
-    $("#idformajt").show();
+    $("#idAjtExo").show();
   });
 });
 
-$("#addform").on("submit", function (event) {
+$("#addform2").on("submit", function (event) {
   event.preventDefault();
 
   $.ajax({
-    url: "addRecette.php",
+    url: "addExercice.php",
     type: "POST",
     data: $(this).serialize(),
     success: function (response) {

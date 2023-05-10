@@ -4,7 +4,7 @@ $(document).ready(function () {
   // Affiche les utilisateurs et cache le reste
   $("#afficherutilisateurs").click(function () {
     $(
-      "#apropos,#recetteCards,#main-content,#apropos,#footer,#idformajt,#recherche,#exerciceCards"
+      "#apropos,#recetteCards,#main-content,#apropos,#footer,#idformajt,#recherche,#exerciceCards,#idAjtExo"
     ).hide();
     $("#utilisateursTable").show();
   });

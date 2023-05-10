@@ -1,7 +1,9 @@
 $(document).ready(function () {
-    $("#recherche").hide();
-    $("#modif").click(function() {
-    $("#apropos,#recetteCards,#main-content,#apropos,#footer,#idformajt,#utilisateursTable").hide();
+  $("#recherche").hide();
+  $("#modif").click(function () {
+    $(
+      "#apropos,#recetteCards,#main-content,#apropos,#footer,#idformajt,#utilisateursTable,#exerciceCards,#idAjtExo"
+    ).hide();
     $("#recherche").show();
   });
 });
@@ -9,21 +11,23 @@ $(document).ready(function () {
 // Récupération des recettes et remplissage de la liste déroulante
 function loadRecipes() {
   $.ajax({
-    url: 'recetteTest.php',
-    type: 'GET',
-    dataType: 'json',
+    url: "recetteTest.php",
+    type: "GET",
+    dataType: "json",
     success: function (data) {
       // Remplissage de la liste déroulante avec les recettes récupérées
       data.forEach(function (recipe) {
-        $('#recipeSelect').append($('<option>', {
-          value: recipe.ID,
-          text: recipe.nom_recette
-        }));
+        $("#recipeSelect").append(
+          $("<option>", {
+            value: recipe.ID,
+            text: recipe.nom_recette,
+          })
+        );
       });
     },
     error: function (error) {
       console.error("Erreur lors de la récupération des recettes :", error);
-    }
+    },
   });
 }
 
@@ -122,8 +126,6 @@ $("#searchBtn").on("click", function () {
         });
       });
 
-    
-
       // Événement pour supprimer la recette
       $("#deleteBtn").on("click", function () {
         if (confirm("Êtes-vous sûr de vouloir supprimer cette recette ?")) {
@@ -148,4 +150,3 @@ $("#searchBtn").on("click", function () {
     },
   });
 });
-

@@ -101,7 +101,7 @@ input[type="checkbox"]:focus {
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#" id="afficherexercice">Afficher</a></li>
                 <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
-                  <li><a class="dropdown-item" href="#">Ajouter</a></li>
+                  <li><a class="dropdown-item" href="#" id="ajouterExercice">Ajouter</a></li>
                   <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
                 <?php endif; ?>
               </ul>
@@ -266,9 +266,48 @@ input[type="checkbox"]:focus {
   <button type="submit" class="btn btn-success" id="addBtn">ajouter la recette</button>
   </div>
 </form>
-
-
 </div>
+
+
+
+<div class="container" id="idAjtExo">
+<h3>Ajouter l'exercice </h3>
+<form id="addform2" action="addExercice.php" method="post">
+  <input type="hidden" name="id"  />
+  <div class="form-group">
+    <label for="name">Nom de l'exercice :</label>
+    <input type="text" class="form-control" name="name"  required />
+  </div>
+  <div class="form-group">
+    <label for="duree_exo">Durée de l'exercice (en minutes) :</label>
+    <input type="number" class="form-control" name="duree_exo"  required />
+  </div>
+  <div class="form-group">
+    <label for="description_exo">Description de l'exercice :</label>
+    <textarea class="form-control" name="description_exo" rows="5" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="objectif_exo">Objectif de l'exercice :</label>
+    <textarea class="form-control" name="objectif_exo" rows="5" required></textarea>
+  </div>
+  <label for="image_file">Fichier de l'image :</label>
+  <input type="file" class="form-control" name="image_file" id="image_file" onchange="updateImageURL();" />
+  <input type="hidden" name="image_url" id="image_url" />
+  <button type="submit" class="btn btn-success" id="addBtn">ajouter l'exercice</button>
+  </div>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
                  
@@ -370,5 +409,6 @@ input[type="checkbox"]:focus {
   <script src="../js/gestionUtilisateurs.js"></script>  
   <script src="../js/afficherFavorisR.js"></script>
   <script src="../js/afficherexercice.js"></script>
+  <script src="../js/ajouterExercice.js"></script>
 </body>
 </html>
