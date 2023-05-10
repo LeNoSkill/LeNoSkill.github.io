@@ -77,7 +77,7 @@ $(document).ready(function () {
     var id = row.find("td:first").text();
   
     $.ajax({
-      url: "deleteUtilisateur.php",
+      url: "supprimerUtilisateur.php",
       type: "POST",
       dataType: "json",
       contentType: "application/json",
