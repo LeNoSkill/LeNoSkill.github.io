@@ -13,6 +13,10 @@ if ($(this).text().trim() === "Accueil") {
   $("#recetteCards,#recherche,#idformajt,#utilisateursTable").hide();
   $("#main-content, #apropos,#footer").show(); // Afficher ces éléments
 }
+//$("#fav").click(function() {$.get("addFavori.php", $(this).attr('data-id').value)});
+
+
+
 });
 
 $("#afficherrecette").click(function () {
@@ -30,7 +34,8 @@ $("#afficherrecette").click(function () {
           $('<p>').text('Temps de cuisson : ' + obj.temps_cuisson).appendTo(cardBody);
            // Ajout de la checkbox
           
-          $('<a>').attr('href','../php/addFavori.php?id=' + obj.ID).text('Favori').appendTo(cardBody);
+          //$('<a>').attr('href','../php/addFavori.php?id=' + obj.ID).text('Favori').appendTo(cardBody);
+          $('<span class="fav">').attr('data-id', obj.ID).text('Favori').appendTo(cardBody);
           $('<br>').appendTo(cardBody);
 
 
@@ -55,9 +60,31 @@ $("#afficherrecette").click(function () {
           $('<br>').appendTo(cardFooter);
           $('<small>').html(' <i class="fa-brands fa-pagelines"></i> Fibres : ' + obj.fibres_par_portion).appendTo(cardFooter);
 
-          
+        
         }
+
+        $(".fav").on("click", function () {
+          var idRecette = "id="+ $(this).attr('data-id')
+        
+          console.log(idRecette);
+        
+          $.ajax({
+            url: "addFavori.php",
+            type: "GET",
+            dataType: "text",
+            data: idRecette,
+            async: false,
+            success: function (response) {
+              alert(response);
+            },
+            error: function (error) {
+              // Gérer les erreurs éventuelles
+              alert("Erreur lors de l'ajout au favori' : " + error.responseText);
+            }
+          });
+        });
       }
+
     })
     .fail(function (error) {
       alert("error détectée:" + error.responseText);

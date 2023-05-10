@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,11 +16,11 @@ try {
 
 
 if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
+    //echo('ok');
     $getid=(int)$_GET['id'];
     $sessionid = $_SESSION['user_id'] ;
 
-
-    echo($getid);
+    
     $check = $pdo->prepare('SELECT id from recettes WHERE ID = ? ');
     $check->execute(array($getid));
 
@@ -28,11 +28,12 @@ if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
         
         $ins = $pdo->prepare('INSERT into favoris (ID_utilisateur, ID_recette) VALUES (?,?)');
         $ins->execute(array($sessionid, $getid));
-        echo('good');
-        header("Location: test.php");
+        //echo((int)$_GET['id']." reussite");
+        
     }
     else{
         echo('erreur');
+        echo((int)$_GET['id']);
     }
 }
 else{
