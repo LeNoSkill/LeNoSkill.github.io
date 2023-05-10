@@ -3,17 +3,19 @@ $(document).ready(function () {
 
   // Affiche les utilisateurs et cache le reste
   $("#afficherutilisateurs").click(function () {
-    $("#apropos,#recetteCards,#main-content,#apropos,#footer,#idformajt,#recherche").hide();
+    $(
+      "#apropos,#recetteCards,#main-content,#apropos,#footer,#idformajt,#recherche,#exerciceCards"
+    ).hide();
     $("#utilisateursTable").show();
   });
 
   $("#afficherutilisateurs").click(function () {
-    $.get("gestionUtilisateurs.php", function () { }, "json")
+    $.get("gestionUtilisateurs.php", function () {}, "json")
       .done(function (data) {
         if (i < data.length) {
           for (var obj of data) {
             i = data.length;
-            var checkedStatus = (obj.TYPE == 1) ? 'checked' : '';
+            var checkedStatus = obj.TYPE == 1 ? "checked" : "";
             var row = $(
               `<tr>
                   <td>${obj.ID}</td>
@@ -42,29 +44,32 @@ $(document).ready(function () {
   });
 
   // Gestion de l'événement click pour la case à cocher "Type"
-  $("#utilisateursTable").on('click', '.type-checkbox', function () {
+  $("#utilisateursTable").on("click", ".type-checkbox", function () {
     var row = $(this).closest("tr");
     var id = row.find("td:first").text();
     var newType = this.checked ? 1 : 0;
 
     // Envoyer les données modifiées au serveur
     $.ajax({
-      url: 'updateUtilisateurs.php',
-      type: 'POST',
-      dataType: 'json',
-      contentType: 'application/json',
+      url: "updateUtilisateurs.php",
+      type: "POST",
+      dataType: "json",
+      contentType: "application/json",
       data: JSON.stringify({ ID: id, TYPE: newType }),
       success: function (response) {
         if (response.status === "success") {
-          alert('Utilisateur mis à jour avec succès');
+          alert("Utilisateur mis à jour avec succès");
         } else {
-          alert('Erreur lors de la mise à jour de l’utilisateur');
+          alert("Erreur lors de la mise à jour de l’utilisateur");
         }
       },
       error: function (error) {
         // Gérer les erreurs éventuelles
-        alert('Erreur lors de la mise à jour de l’utilisateur : ' + error.responseText);
-      }
+        alert(
+          "Erreur lors de la mise à jour de l’utilisateur : " +
+            error.responseText
+        );
+      },
     });
 
     // Mettre à jour le type dans la table
@@ -75,7 +80,7 @@ $(document).ready(function () {
   $("#utilisateursTable").on("click", ".btn-danger", function () {
     var row = $(this).closest("tr");
     var id = row.find("td:first").text();
-  
+
     $.ajax({
       url: "supprimerUtilisateur.php",
       type: "POST",
@@ -93,9 +98,11 @@ $(document).ready(function () {
       },
       error: function (error) {
         // Gérer les erreurs éventuelles
-        alert("Erreur lors de la suppression de l'utilisateur : " + error.responseText);
-      }
+        alert(
+          "Erreur lors de la suppression de l'utilisateur : " +
+            error.responseText
+        );
+      },
     });
   });
-  
 });

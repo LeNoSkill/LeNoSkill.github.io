@@ -99,7 +99,7 @@ input[type="checkbox"]:focus {
                 <i class="fas fa-running"></i> Exercices physiques
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Afficher</a></li>
+                <li><a class="dropdown-item" href="#" id="afficherexercice">Afficher</a></li>
                 <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
                   <li><a class="dropdown-item" href="#">Ajouter</a></li>
                   <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
@@ -299,6 +299,9 @@ input[type="checkbox"]:focus {
   <div id="recetteCardsFav" class="row row-cols-1 row-cols-md-4 g-4">
   </div>
 
+  <div id="exerciceCards" class="row row-cols-1 row-cols-md-4 g-4">
+  </div>
+
   <div class="table-responsive" id="utilisateursTable" style="display:none">
   <table class="table table-hover">
     <thead class="thead-dark"><br>
@@ -366,5 +369,6 @@ input[type="checkbox"]:focus {
   <script src="../js/updateImage.js"></script>  
   <script src="../js/gestionUtilisateurs.js"></script>  
   <script src="../js/afficherFavorisR.js"></script>
+  <script src="../js/afficherexercice.js"></script>
 </body>
 </html>
