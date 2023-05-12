@@ -26,7 +26,7 @@ if (isset($_POST['name']) && isset($_POST['duree_exo']) && isset($_POST['descrip
     $image_url = $_POST['image_url'] ?? '';
 
     // Préparer la requête pour mettre à jour la recette
-    $stmt = $pdo->prepare("INSERT INTO `exercice` (`name`, `duree_exo`, `description_exo`, `objectif_exo`, `image_url`) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO `exercice` (`nom`, `duree`, `descript`, `objectif`, `image_url`) VALUES (?, ?, ?, ?, ?)");
 
 
     // Exécuter la requête avec les données du formulaire
