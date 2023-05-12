@@ -4,7 +4,7 @@ $(document).ready(function () {
   $("#afficherexercice").click(function () {
     console.log("essai");
     $(
-      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCards,#idAjtExo"
+      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCards,#idAjtExo,#modifierExercice,#recherche2,"
     ).hide();
     $("#exerciceCards").show();
   });

@@ -102,7 +102,7 @@ input[type="checkbox"]:focus {
                 <li><a class="dropdown-item" href="#" id="afficherexercice">Afficher</a></li>
                 <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
                   <li><a class="dropdown-item" href="#" id="ajouterExercice">Ajouter</a></li>
-                  <li><a class="dropdown-item" href="#">Modifier/Supprimer</a></li>
+                  <li><a class="dropdown-item" href="#" id="modifierExercice">Modifier/Supprimer</a></li>
                 <?php endif; ?>
               </ul>
             </li>
@@ -330,6 +330,27 @@ input[type="checkbox"]:focus {
 <?php endif; ?>
 
 
+<?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1): ?>
+                 
+                 <div class="container" id="recherche2">
+                   <div class="row">
+                     <div class="col-md-8">
+                       <!--<input type="text" id="searchRecipe" class="form-control" placeholder="Recherchez une recette par nom">-->
+                       <select id="exerciceSelect" class="form-control">
+                         <!-- Les options seront générées dynamiquement ici -->
+                       </select>
+                     </div>
+                     <div class="col-md-4">
+                       <button id="searchBtn2" class="btn btn-primary">Chercher</button>
+                     </div>
+                   </div>
+                   <div id="editFormContainer2" style="display:none;">
+                     <!-- Le formulaire de modification sera généré ici -->
+                   </div>
+                 </div>
+               <?php endif; ?>
+
+
 
   </div>
   <div id="recetteCards" class="row row-cols-1 row-cols-md-4 g-4">
@@ -410,5 +431,6 @@ input[type="checkbox"]:focus {
   <script src="../js/afficherFavorisR.js"></script>
   <script src="../js/afficherexercice.js"></script>
   <script src="../js/ajouterExercice.js"></script>
+  <script src="../js/modifierExercice.js"></script>
 </body>
 </html>
