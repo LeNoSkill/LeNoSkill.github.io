@@ -14,7 +14,7 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-
+$fav_color = '';
 if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
     //echo('ok');
     $getid=(int)$_GET['id'];
@@ -33,6 +33,7 @@ if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
     else{
         $ins = $pdo->prepare('INSERT into favoris (ID_utilisateur, ID_recette) VALUES (?,?)');
         $ins->execute(array($sessionid, $getid));
+        $fav_color = 'style="color: red;"'; // si l'élément est présent, ajouter un style avec la couleur rouge
     }
 
 /*    

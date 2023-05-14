@@ -268,7 +268,20 @@ input[type="checkbox"]:focus {
 </form>
 </div>
 
-
+<style>
+  .fav {
+  cursor: pointer;
+  color: grey;
+  transition: transform 0.2s ease-in-out;
+}
+.fav:hover {
+  transform: scale(1.2);
+  color: red;
+}
+.fav-rouge {
+  color: red;
+}
+</style>
 
 <div class="container" id="idAjtExo">
 <h3>Ajouter l'exercice </h3>
