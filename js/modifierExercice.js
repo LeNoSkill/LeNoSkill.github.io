@@ -9,7 +9,7 @@ $(document).ready(function () {
 });
 
 // Récupération des recettes et remplissage de la liste déroulante
-function loadRecipes() {
+function loadExercices() {
   $.ajax({
     url: "exerciceTest.php",
     type: "GET",
@@ -33,7 +33,7 @@ function loadRecipes() {
 
 // Charge les recettes lors du chargement de la page
 $(document).ready(function () {
-  loadRecipes();
+  loadExercices();
 });
 
 // Lorsque le bouton de recherche est cliqué
