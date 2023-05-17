@@ -3,7 +3,7 @@ $(document).ready(function () {
   // Affiche les recettes et cache le reste
   $("#afficherrecette").click(function () {
     $(
-      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCardsFav,#modifierExercice,#recherche2"
+      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCardsFav,#modifierExercice,#recherche2,#exerciceCards,#idAjtExo"
     ).hide();
     $("#recetteCards,#footer").show();
   });
@@ -124,7 +124,7 @@ $(document).ready(function () {
             var idRecette = "id=" + $(this).attr("data-id");
 
             console.log(idRecette);
-
+            var element = $(this);
             $.ajax({
               url: "addFavori.php",
               type: "GET",
@@ -132,7 +132,17 @@ $(document).ready(function () {
               data: idRecette,
               async: false,
               success: function (response) {
+                if (element.css("color") === "rgb(255, 0, 0)") {
+                  element.css("color", "gray"); // Changez la couleur en gris si elle est rouge
+                } else {
+                  element.css("color", "red"); // Sinon, changez la couleur en rouge
+                }
                 alert("réussi" + response);
+                location.reload();
+                $(
+                  "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCardsFav,#modifierExercice,#recherche2,#exerciceCards,#idAjtExo"
+                ).hide();
+                $("#recetteCards,#footer").show();
               },
               error: function (error) {
                 // Gérer les erreurs éventuelles

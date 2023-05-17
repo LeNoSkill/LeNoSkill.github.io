@@ -278,9 +278,19 @@ input[type="checkbox"]:focus {
   transform: scale(1.2);
   color: red;
 }
-.fav-rouge {
+.fav:rouge {
   color: red;
 }
+.favExo {
+  cursor: pointer;
+  color: grey;
+  transition: transform 0.2s ease-in-out;
+}
+.favExo:hover {
+  transform: scale(1.2);
+  color: red;
+}
+
 </style>
 
 <div class="container" id="idAjtExo">

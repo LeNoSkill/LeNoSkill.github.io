@@ -3,7 +3,7 @@ $(document).ready(function () {
   // Affiche les recettes et cache le reste
   $("#afficherFavorisRec").click(function () {
     $(
-      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCards,#modifierExercice,#recherche2"
+      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCards,#modifierExercice,#recherche2,#exerciceCards,#idAjtExo"
     ).hide();
     $("#recetteCardsFav,#footer").show();
   });
@@ -43,7 +43,7 @@ $(document).ready(function () {
               .text("Temps de cuisson : " + obj.temps_cuisson)
               .appendTo(cardBody);
             // Ajout de la checkbox
-
+/*
             //$('<a>').attr('href','../php/addFavori.php?id=' + obj.ID).text('Favori').appendTo(cardBody);
             $('<span class="fav2">')
               .attr("data-id", obj.ID)
@@ -51,7 +51,7 @@ $(document).ready(function () {
               .appendTo(cardBody);
             $("<br>").appendTo(cardBody);
             $("<br>").appendTo(cardBody);
-
+*/
             // $('<label>').text('Ajouter aux favoris').appendTo(cardBody);
 
             var uniqueId = obj.nom_recette.replace(/\s+/g, ""); // remove spaces to create a unique ID
@@ -118,7 +118,7 @@ $(document).ready(function () {
               )
               .appendTo(cardFooter);
           }
-
+/*
           $(".fav2").on("click", function () {
             var idRecette = "id=" + $(this).attr("data-id");
 
@@ -140,7 +140,7 @@ $(document).ready(function () {
                 );
               },
             });
-          });
+          });*/
         }
       })
       .fail(function (error) {

@@ -4,7 +4,7 @@ $(document).ready(function () {
   $("#afficherexercice").click(function () {
     console.log("essai");
     $(
-      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCards,#idAjtExo,#modifierExercice,#recherche2,"
+      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCards,#idAjtExo,#modifierExercice,#recherche2, #recetteCardsFav"
     ).hide();
     $("#exerciceCards").show();
   });
@@ -38,6 +38,13 @@ $(document).ready(function () {
             $("<p>")
               .text("Durée : " + obj.duree)
               .appendTo(cardBody);
+            $('<span class="favExo">')
+              .attr("data-id", obj.ID)
+              .html('<i class="fa fa-heart"></i>')
+              .appendTo(cardBody);
+            $("<br>").appendTo(cardBody);
+            $("<br>").appendTo(cardBody);
+
             $("<p>")
               .text("description : " + obj.descript)
               .appendTo(cardBody);
