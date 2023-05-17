@@ -12,7 +12,7 @@ $(document).ready(function () {
     $(".nav-link[href='#']").click(function (event) {
       event.preventDefault(); // Empêche le comportement par défaut du lien
       if ($(this).text().trim() === "Accueil") {
-        $("#recetteCardsFav,#recherche,#idformajt,#utilisateursTable").hide();
+        $("#exoCardsFav,#recherche,#idformajt,#utilisateursTable").hide();
         $("#main-content, #apropos,#footer").show(); // Afficher ces éléments
       }
       //$("#fav").click(function() {$.get("addFavori.php", $(this).attr('data-id').value)});

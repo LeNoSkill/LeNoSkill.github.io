@@ -194,21 +194,21 @@ input[type="checkbox"]:focus {
       <img src="../img/Louis.jpg" alt="Créateur 1">
       <h3>Criquillion Louis</h3>
       <p>
-        Pas le pote de Matéo a été exploiter pour se site.
+       Etudiant de la HELHa
       </p>
     </div>
     <div class="col-md-4 person">
       <img src="../img/Francesco.png" alt="Créateur 2">
       <h3>Francesco Battista</h3>
       <p>
-        le fr , le sang , a aider mentalement et a essayé de mettre matéo sur la bonne voie.
+        Etudiant de la HELHa
       </p>
     </div>
     <div class="col-md-4 person">
       <img src="../img/Mateo.jpg" alt="Créateur 3">
       <h3>Matéo Fontaine</h3>
       <p>
-       Beau frère de Louis (a baisé sa soeur)
+       Etudiant de la HELHa
       </p>
     </div>
   </div>

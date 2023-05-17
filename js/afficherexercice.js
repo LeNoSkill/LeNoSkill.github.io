@@ -60,7 +60,40 @@ $(document).ready(function () {
                 )
                 .appendTo(cardBody);
             }
+            
           }
+          $(".favExo").on("click", function () {
+            var idExo = "id=" + $(this).attr("data-id");
+
+            console.log(idExo);
+            var element = $(this);
+            $.ajax({
+              url: "addFavExo.php",
+              type: "GET",
+              dataType: "text",
+              data: idExo,
+              async: false,
+              success: function (response) {
+                if (element.css("color") === "rgb(255, 0, 0)") {
+                  element.css("color", "gray"); // Changez la couleur en gris si elle est rouge
+                } else {
+                  element.css("color", "red"); // Sinon, changez la couleur en rouge
+                }
+                alert("réussi" + response);
+                location.reload();
+                $(
+                  "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCardsFav,#modifierExercice,#recherche2,#exerciceCards,#idAjtExo"
+                ).hide();
+                $("#recetteCards,#footer").show();
+              },
+              error: function (error) {
+                // Gérer les erreurs éventuelles
+                alert(
+                  "Erreur lors de l'ajout au favori' : " + error.responseText
+                );
+              },
+            });
+          });
         }
       })
       .fail(function (error) {
