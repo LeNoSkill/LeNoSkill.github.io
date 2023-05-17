@@ -3,7 +3,7 @@ $(document).ready(function () {
   // Affiche les recettes et cache le reste
   $("#afficherrecette").click(function () {
     $(
-      "#main-content,#apropos,#recherche,#idformajt,#exerciceCards,#idAjtExo,#modifierExercice,#recherche2,#exoCardsFav",
+      "#main-content,#apropos,#recherche,#idformajt,#exerciceCards,#idAjtExo,#recherche2,#exoCardsFav",
       "#utilisateursTable"
     ).hide();
     $("#recetteCards").show();

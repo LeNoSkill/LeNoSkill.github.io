@@ -2,7 +2,7 @@ $(document).ready(function () {
   $("#idAjtExo").hide();
   $("#ajouterExercice").click(function () {
     $(
-      "#apropos,#recetteCards,#main-content,#apropos,#footer,#recherche,#utilisateursTable,#exerciceCards,#modifierExercice,#recherche2,#recetteCardsFav,#exoCardsFav"
+      "#apropos,#recetteCards,#main-content,#apropos,#footer,#recherche,#utilisateursTable,#exerciceCards,#recherche2,#recetteCardsFav,#exoCardsFav"
     ).hide();
     $("#idAjtExo").show();
   });

@@ -3,7 +3,7 @@ $(document).ready(function () {
   // Affiche les recettes et cache le reste
   $("#afficherrecette").click(function () {
     $(
-      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCardsFav,#modifierExercice,#recherche2,#exerciceCards,#idAjtExo,#exoCardsFav"
+      "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCardsFav,#recherche2,#exerciceCards,#idAjtExo,#exoCardsFav"
     ).hide();
     $("#recetteCards,#footer").show();
   });
