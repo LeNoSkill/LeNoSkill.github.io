@@ -382,6 +382,10 @@ input[type="checkbox"]:focus {
   <div id="recetteCardsFav" class="row row-cols-1 row-cols-md-4 g-4">
   </div>
 
+  <div id="exoCardsFav" class="row row-cols-1 row-cols-md-4 g-4">
+    hello
+  </div>
+
   <div id="exerciceCards" class="row row-cols-1 row-cols-md-4 g-4">
   </div>
 
@@ -455,5 +459,6 @@ input[type="checkbox"]:focus {
   <script src="../js/afficherexercice.js"></script>
   <script src="../js/ajouterExercice.js"></script>
   <script src="../js/modifierExercice.js"></script>
+  <script src="../js/afficherFavorisE.js"></script>
 </body>
 </html>
