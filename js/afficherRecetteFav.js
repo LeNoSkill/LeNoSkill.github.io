@@ -18,6 +18,7 @@ $(document).ready(function () {
     //$("#fav").click(function() {$.get("addFavori.php", $(this).attr('data-id').value)});
   });
 
+  
   $("#afficherrecette").click(function () {
     $.get("recetteTest.php", function () {}, "json")
       .done(function (data) {
@@ -46,12 +47,17 @@ $(document).ready(function () {
 
             //$('<a>').attr('href','../php/addFavori.php?id=' + obj.ID).text('Favori').appendTo(cardBody);
             
-            $('<span class="fav">')
+          var favElement=  $('<span class="fav">')
               .attr("data-id", obj.ID)
               .html('<i class="fa fa-heart"></i>')
               .appendTo(cardBody);
             $("<br>").appendTo(cardBody);
             $("<br>").appendTo(cardBody);
+            console.log(
+              "id crea : "+favElement.attr("data-id")
+            );
+
+            
 
             // $('<label>').text('Ajouter aux favoris').appendTo(cardBody);
 
@@ -118,7 +124,43 @@ $(document).ready(function () {
                   obj.fibres_par_portion
               )
               .appendTo(cardFooter);
+                
+              (function (favElement) {
+              $.ajax({             
+
+                
+                url: "testVerifFav.php",
+                type: "GET",
+                dataType: "json",
+                data: { id: favElement.attr("data-id") },
+                success: function (response) {
+  
+                  
+                  //var isFavorited = JSON.parse(response); // Convertir la réponse en valeur booléenne
+                  var isFavorited = response.is_favorited; 
+                  console.log(
+                    "passage dans success : " + isFavorited +" "+favElement.attr("data-id")
+                  );
+                  if (isFavorited) {
+                    favElement.css("color", "red");
+                  }/*
+                  if (response === "true") {
+                    favElement.css("color", "red");
+                  }*/
+                },
+                error: function (error) {
+                  // Gérer les erreurs éventuelles
+                  console.log(
+                    "Erreur lors de la vérification des favoris : " +
+                      error.responseText
+                  );
+                },
+              });
+            })(favElement); 
+             
           }
+
+          
 
           $(".fav").on("click", function () {
             var idRecette = "id=" + $(this).attr("data-id");
@@ -137,7 +179,7 @@ $(document).ready(function () {
                 } else {
                   element.css("color", "red"); // Sinon, changez la couleur en rouge
                 }
-                alert("réussi" + response);
+                alert("" + response);
                 location.reload();
                 $(
                   "#main-content,#apropos,#recherche,#idformajt,#utilisateursTable,#recetteCardsFav,#modifierExercice,#recherche2,#exerciceCards,#idAjtExo"

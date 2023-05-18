@@ -24,7 +24,7 @@ if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
     $check_fav->execute(array($getid,$sessionid));
 
     if($check_fav->rowCount()==1){
-        
+        echo("retiré des favoris");
         $ins = $pdo->prepare('DELETE FROM favorisexo WHERE id_exo = ? AND id_utilisateur = ?');
         $ins->execute(array($getid, $sessionid));
         //echo((int)$_GET['id']." reussite");
@@ -34,6 +34,7 @@ if(isset($_GET['id'],$_SESSION['user_id']) AND !empty($_GET['id'])){
         $ins = $pdo->prepare('INSERT into favorisexo (id_utilisateur, id_exo) VALUES (?,?)');
         $ins->execute(array($sessionid, $getid));
         $fav_color = 'style="color: red;"'; // si l'élément est présent, ajouter un style avec la couleur rouge
+        echo("ajouté aux favoris");
     }
 
 /*    

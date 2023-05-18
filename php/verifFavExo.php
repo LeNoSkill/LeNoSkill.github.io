@@ -19,7 +19,7 @@ if(isset($_GET['id'], $_SESSION['user_id']) && !empty($_GET['id'])){
     $getid=(int)$_GET['id'];
     $sessionid = $_SESSION['user_id'];
     //echo($getid);
-    $check_fav = $pdo->prepare('SELECT id FROM favoris WHERE ID_recette = ? AND ID_utilisateur = ?');
+    $check_fav = $pdo->prepare('SELECT id FROM favorisexo WHERE id_exo = ? AND id_utilisateur = ?');
     $check_fav->execute(array($getid, $sessionid));
 
     if($check_fav->rowCount() == 1){
