@@ -69,6 +69,30 @@ input[type="checkbox"]:focus {
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 </style>
+<style>
+  .fav {
+  cursor: pointer;
+  color: grey;
+  transition: transform 0.2s ease-in-out;
+}
+.fav:hover {
+  transform: scale(1.2);
+  color: red;
+}
+.fav:rouge {
+  color: red;
+}
+.favExo {
+  cursor: pointer;
+  color: grey;
+  transition: transform 0.2s ease-in-out;
+}
+.favExo:hover {
+  transform: scale(1.2);
+  color: red;
+}
+
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -111,9 +135,6 @@ input[type="checkbox"]:focus {
               <a class="nav-link" href="#" id="afficherutilisateurs"><i class="fas fa-users"></i> Gestion des utilisateurs</a>
             </li>
             <?php endif; ?>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-barcode"></i> Scanner</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-heart"></i> Favoris</a>
@@ -212,6 +233,7 @@ input[type="checkbox"]:focus {
       </p>
     </div>
   </div>
+  </br>
 </section>
 </div>
 </div>
@@ -268,30 +290,7 @@ input[type="checkbox"]:focus {
 </form>
 </div>
 
-<style>
-  .fav {
-  cursor: pointer;
-  color: grey;
-  transition: transform 0.2s ease-in-out;
-}
-.fav:hover {
-  transform: scale(1.2);
-  color: red;
-}
-.fav:rouge {
-  color: red;
-}
-.favExo {
-  cursor: pointer;
-  color: grey;
-  transition: transform 0.2s ease-in-out;
-}
-.favExo:hover {
-  transform: scale(1.2);
-  color: red;
-}
 
-</style>
 
 <div class="container" id="idAjtExo">
 <h3>Ajouter l'exercice </h3>
@@ -383,7 +382,6 @@ input[type="checkbox"]:focus {
   </div>
 
   <div id="exoCardsFav" class="row row-cols-1 row-cols-md-4 g-4">
-    hello
   </div>
 
   <div id="exerciceCards" class="row row-cols-1 row-cols-md-4 g-4">
