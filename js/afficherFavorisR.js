@@ -43,7 +43,7 @@ $(document).ready(function () {
               .text("Temps de cuisson : " + obj.temps_cuisson)
               .appendTo(cardBody);
             // Ajout de la checkbox
-/*
+            /*
             //$('<a>').attr('href','../php/addFavori.php?id=' + obj.ID).text('Favori').appendTo(cardBody);
             $('<span class="fav2">')
               .attr("data-id", obj.ID)
@@ -118,7 +118,7 @@ $(document).ready(function () {
               )
               .appendTo(cardFooter);
           }
-/*
+          /*
           $(".fav2").on("click", function () {
             var idRecette = "id=" + $(this).attr("data-id");
 

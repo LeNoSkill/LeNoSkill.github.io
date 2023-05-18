@@ -38,7 +38,7 @@ $(document).ready(function () {
             $("<p>")
               .text("Durée : " + obj.duree)
               .appendTo(cardBody);
-            var favEltExo= $('<span class="favExo">')
+            var favEltExo = $('<span class="favExo">')
               .attr("data-id", obj.ID)
               .html('<i class="fa fa-heart"></i>')
               .appendTo(cardBody);
@@ -60,26 +60,25 @@ $(document).ready(function () {
                 )
                 .appendTo(cardBody);
             }
-            
-            (function (favEltExo) {
-              $.ajax({             
 
-                
+            (function (favEltExo) {
+              $.ajax({
                 url: "verifFavExo.php",
                 type: "GET",
                 dataType: "json",
                 data: { id: favEltExo.attr("data-id") },
                 success: function (response) {
-  
-                  
                   //var isFavorited = JSON.parse(response); // Convertir la réponse en valeur booléenne
-                  var isFavorited = response.is_favorited; 
+                  var isFavorited = response.is_favorited;
                   console.log(
-                    "passage dans success : " + isFavorited +" "+favEltExo.attr("data-id")
+                    "passage dans success : " +
+                      isFavorited +
+                      " " +
+                      favEltExo.attr("data-id")
                   );
                   if (isFavorited) {
                     favEltExo.css("color", "red");
-                  }/*
+                  } /*
                   if (response === "true") {
                     favElement.css("color", "red");
                   }*/
@@ -92,8 +91,7 @@ $(document).ready(function () {
                   );
                 },
               });
-            })(favEltExo); 
-            
+            })(favEltExo);
           }
           $(".favExo").on("click", function () {
             var idExo = "id=" + $(this).attr("data-id");

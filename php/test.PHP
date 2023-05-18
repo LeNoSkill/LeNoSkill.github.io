@@ -198,10 +198,10 @@ input[type="checkbox"]:focus {
       </p>
     </div>
     <div class="col-md-4 person">
-      <img src="../img/Francesco.png" alt="Créateur 2">
+      <img src="../img/francesco.jpg" alt="Créateur 2">
       <h3>Francesco Battista</h3>
       <p>
-        Etudiant de la HELHa
+        Etudiant à la HELHA, agé de 21 ans.</br>Amateur en développement web qui ne cesse de progresser et qui plus est,</br> est le plus beau de ce groupe.
       </p>
     </div>
     <div class="col-md-4 person">
