@@ -194,7 +194,7 @@ input[type="checkbox"]:focus {
       <img src="../img/Louis.jpg" alt="Créateur 1">
       <h3>Criquillion Louis</h3>
       <p>
-       Etudiant de la HELHa
+      Etudiant à la HELHA, agé de 21 ans.</br>Amateur en développement web qui ne cesse de progresser et à se performer.
       </p>
     </div>
     <div class="col-md-4 person">
@@ -208,7 +208,7 @@ input[type="checkbox"]:focus {
       <img src="../img/Mateo.jpg" alt="Créateur 3">
       <h3>Matéo Fontaine</h3>
       <p>
-       Etudiant de la HELHa
+       Etudiant de la HELHa et est aussi le plus gros fils de pute de la Terre !!
       </p>
     </div>
   </div>
@@ -426,9 +426,6 @@ input[type="checkbox"]:focus {
         <p>
           <a href="https://www.facebook.com/smarteats" style="color: #fff; text-decoration: none;">
             <i class="fab fa-facebook-square"></i> Facebook
-          </a><br>
-          <a href="https://www.instagram.com/smarteats" style="color: #fff; text-decoration: none;">
-            <i class="fab fa-instagram"></i> Instagram
           </a><br>
           <a href="https://twitter.com/SmartEats511893" style="color: #fff; text-decoration: none;">
             <i class="fab fa-twitter"></i> Twitter
