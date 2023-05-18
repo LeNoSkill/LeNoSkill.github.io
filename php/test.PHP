@@ -201,14 +201,14 @@ input[type="checkbox"]:focus {
       <img src="../img/francesco.jpg" alt="Créateur 2">
       <h3>Francesco Battista</h3>
       <p>
-        Etudiant à la HELHA, agé de 21 ans.</br>Amateur en développement web qui ne cesse de progresser et qui plus est,</br> est le plus beau de ce groupe.
+        Etudiant à la HELHA, agé de 21 ans.</br>Amateur en développement web qui ne cesse de progresser et qui plus est,</br> est le plus beau de ce groupe.</br>
       </p>
     </div>
     <div class="col-md-4 person">
       <img src="../img/Mateo.jpg" alt="Créateur 3">
       <h3>Matéo Fontaine</h3>
       <p>
-       Etudiant de la HELHa et est aussi le plus gros fils de pute de la Terre !!
+       Etudiant à la HELHA, agé de 19 ans.</br>Novice en développement web qui suit les pas de ces 2 collègues.
       </p>
     </div>
   </div>
