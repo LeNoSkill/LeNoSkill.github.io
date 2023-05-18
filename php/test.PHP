@@ -205,7 +205,7 @@ input[type="checkbox"]:focus {
       </p>
     </div>
     <div class="col-md-4 person">
-      <img src="../img/Mateo.jpg" alt="Créateur 3">
+      <img src="../img/mateo.jpg" alt="Créateur 3">
       <h3>Matéo Fontaine</h3>
       <p>
        Etudiant à la HELHA, agé de 19 ans.</br>Novice en développement web qui suit les pas de ces 2 collègues.
