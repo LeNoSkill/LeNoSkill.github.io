@@ -23,7 +23,7 @@ if (isset($_POST['id']) && isset($_POST['name']) && isset($_POST['duree']) && is
     $duree = $_POST['duree'];
     $description = $_POST['description'];
     $objectif = $_POST['objectif'];
-    $image_url = $_POST['image_url2'] ?? '';
+    $image_url = $_POST['image_url4'] ?? '';
 
     // Préparer la requête pour mettre à jour la recette
     $stmt = $pdo->prepare("UPDATE exercice SET nom = ?, duree = ?, descript = ?, objectif = ?,image_url = ? WHERE ID = ?");

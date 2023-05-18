@@ -75,8 +75,8 @@ $("#searchBtn2").on("click", function () {
     </div>
 
     <label for="image_file">Fichier de l'image :</label>
-    <input type="file" class="form-control" name="image_file2" id="image_file2" onchange="updateImageURL2();" />
-    <input type="hidden" name="image_url2" id="image_url2" value="${exercice.image_url}" />
+    <input type="file" class="form-control" name="image_file4" id="image_file4" onchange="updateImageURL4();" />
+    <input type="hidden" name="image_url4" id="image_url4" value="${exercice.image_url}" />
     
     </div>
     <button type="submit" class="btn btn-success">Enregistrer les modifications </button>

@@ -314,8 +314,8 @@ input[type="checkbox"]:focus {
     <textarea class="form-control" name="objectif_exo" rows="5" required></textarea>
   </div>
   <label for="image_file">Fichier de l'image :</label>
-  <input type="file" class="form-control" name="image_file" id="image_file" onchange="updateImageURL();" />
-  <input type="hidden" name="image_url" id="image_url" />
+  <input type="file" class="form-control" name="image_file3" id="image_file3" onchange="updateImageURL3();" />
+  <input type="hidden" name="image_url3" id="image_url3" />
   <button type="submit" class="btn btn-success" id="addBtn">ajouter l'exercice</button>
   </div>
 </form>

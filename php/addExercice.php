@@ -16,21 +16,21 @@ try {
 }
 
 // Vérifier si toutes les données requises sont présentes dans $_POST
-if (isset($_POST['name']) && isset($_POST['duree_exo']) && isset($_POST['description_exo']) && isset($_POST['objectif_exo'])  && isset($_POST['image_url']) ) {
+if (isset($_POST['name']) && isset($_POST['duree_exo']) && isset($_POST['description_exo']) && isset($_POST['objectif_exo'])  && isset($_POST['image_url3']) ) {
     // Récupérer les données du formulaire
  
     $name = $_POST['name'];
     $duree_exo = $_POST['duree_exo'];
     $description_exo = $_POST['description_exo'];
     $objectif_exo = $_POST['objectif_exo'];
-    $image_url = $_POST['image_url'] ?? '';
+    $image_url3 = $_POST['image_url3'] ?? '';
 
     // Préparer la requête pour mettre à jour la recette
     $stmt = $pdo->prepare("INSERT INTO `exercice` (`nom`, `duree`, `descript`, `objectif`, `image_url`) VALUES (?, ?, ?, ?, ?)");
 
 
     // Exécuter la requête avec les données du formulaire
-    if ($stmt->execute([$name, $duree_exo, $description_exo, $objectif_exo,$image_url])) {
+    if ($stmt->execute([$name, $duree_exo, $description_exo, $objectif_exo,$image_url3])) {
         // Si la requête s'exécute avec succès, renvoyer un statut JSON "success"
         echo json_encode(["status" => "success"]);
     } else {
