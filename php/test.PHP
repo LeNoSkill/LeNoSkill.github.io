@@ -430,7 +430,7 @@ input[type="checkbox"]:focus {
           <a href="https://www.instagram.com/smarteats" style="color: #fff; text-decoration: none;">
             <i class="fab fa-instagram"></i> Instagram
           </a><br>
-          <a href="https://www.twitter.com/smarteats" style="color: #fff; text-decoration: none;">
+          <a href="https://twitter.com/SmartEats511893" style="color: #fff; text-decoration: none;">
             <i class="fab fa-twitter"></i> Twitter
           </a>
         </p>
