@@ -9,11 +9,13 @@ $(document).ready(function () {
 });
 
 $("#addform2").on("submit", function (event) {
+  //annule rechargement de page//deplacement page apres avoir soumis un formulaire
   event.preventDefault();
 
   $.ajax({
     url: "addExercice.php",
     type: "POST",
+    //prend et encode entrées du formulaire
     data: $(this).serialize(),
     success: function (response) {
       alert(response);
